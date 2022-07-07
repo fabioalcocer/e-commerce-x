@@ -1,6 +1,7 @@
 import Header from './components/Header'
 import Search from './components/Search'
 import Tags from './components/Tags'
+import Details from './components/Details'
 
 function App() {
   return (
@@ -9,9 +10,10 @@ function App() {
         <Header />
         <Search />
         <Tags />
+        <Details />
       </main>
     </div>
-  )
+  );
 }
 
 export default App
