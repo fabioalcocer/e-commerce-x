@@ -38,20 +38,21 @@ body {
 
 h1 {
   font: var(--title-32bold);
-  color: var(--green-1);
 }
 
 h2 {
   font: var(--subtitle-22bold);
-  color: var(--grey-3);
 }
 
 p {
   font: var(--subtitle-22medium);
-  color: var(--red);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+::-webkit-scrollbar {
+  height: 0;
 }
