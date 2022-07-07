@@ -1,6 +1,6 @@
 function Card() {
   return (
-    <div className="sm:container">Card</div>
+    <div className="">Card</div>
   )
 }
 
