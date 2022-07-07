@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --green-1: #65c482;
+  --green-2: #2d9d20;
+  --grey: #f9f8f8;
+  --grey-2: #fbfdff;
+  --grey-3: #656f7e;
+  --grey-4: #b8b4b4;
+  --red: #ff4a4a;
+  --title-32bold: 700 2rem/2.25rem Inter;
+  --title-45bold: 700 2.8125rem / normal Inter;
+  --subtitle-22medium: 500 1.375rem/1.625rem Inter;
+  --subtitle-22bold: 700 1.375rem/1.625rem Inter;
+  --body-16regular: 400 1rem/1.25rem Inter;
+  --body-16bold: 700 1rem/1.25rem Inter;
+  --body-14regular: 400 0.875rem/1.125rem Inter;
+  --body-14regular_u: 500 0.875rem/1.25rem Inter;
+  --caption-12bold: 700 0.75rem/1rem Inter;
+  --caption-12regular: 400 0.75rem/1rem Inter;
+  --caption-12regular_u: 400 0.75rem/1.25rem Inter;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: var(--body-16regular);
+}
+
+h1 {
+  font: var(--title-32bold);
+  color: var(--green-1);
+}
+
+h2 {
+  font: var(--subtitle-22bold);
+  color: var(--grey-3);
+}
+
+p {
+  font: var(--subtitle-22medium);
+  color: var(--red);
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
