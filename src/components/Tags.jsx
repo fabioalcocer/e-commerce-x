@@ -4,7 +4,7 @@ function Tags() {
       <li className="mr-2">
         <a
           href="#"
-          className="inline-block py-2 px-3 rounded-3xl bg-gray-800 text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+          className="inline-block py-2 px-3 rounded-3xl bg-gray-800 text-white hover:text-gray-900 hover:bg-gray-100"
         >
           Todo
         </a>
@@ -13,7 +13,7 @@ function Tags() {
         <a
           href="#"
           className="inline-block py-2 px-3 rounded-3xl bg-gray-100 text-slate-900
-          hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+          hover:text-gray-900 hover:bg-gray-100"
         >
           Sudaderas
         </a>
@@ -22,7 +22,7 @@ function Tags() {
         <a
           href="#"
           className="inline-block py-2 px-3 rounded-3xl bg-gray-100 text-slate-900
-          hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+          hover:text-gray-900 hover:bg-gray-100"
         >
           Pantalones
         </a>
@@ -31,9 +31,36 @@ function Tags() {
         <a
           href="#"
           className="inline-block py-2 px-3 rounded-3xl bg-gray-100 text-slate-900
-          hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-800 dark:hover:text-white"
+          hover:text-gray-900 hover:bg-gray-100"
         >
           Vermudas
+        </a>
+      </li>
+      <li className="mr-2">
+        <a
+          href="#"
+          className="inline-block py-2 px-3 rounded-3xl bg-gray-100 text-slate-900
+          hover:text-gray-900 hover:bg-gray-100"
+        >
+          Deportivos
+        </a>
+      </li>
+      <li className="mr-2">
+        <a
+          href="#"
+          className="inline-block py-2 px-3 rounded-3xl bg-gray-100 text-slate-900
+          hover:text-gray-900 hover:bg-gray-100"
+        >
+          Shorts
+        </a>
+      </li>
+      <li className="mr-2">
+        <a
+          href="#"
+          className="inline-block py-2 px-3 rounded-3xl bg-gray-100 text-slate-900
+          hover:text-gray-900 hover:bg-gray-100"
+        >
+          Tenis
         </a>
       </li>
     </ul>
