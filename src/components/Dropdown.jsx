@@ -7,11 +7,11 @@ function classNames(...classes) {
 
 function Dropdown() {
   return (
-    <div className="flex items-center justify-between pt-4 mt-4">
+    <div className="mt-4 flex items-center justify-between pt-4">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="inline-flex justify-center items-center rounded-3xl border-2 border-black shadow-sm px-4 py-1.5 text-md font-bold text-slate-900 hover:bg-gray-50 focus:border-2  focus:outline-none focus:border-indigo-700">
-            <BiFilterAlt className="text-2xl font-bold mr-1" />
+          <Menu.Button className="text-md inline-flex items-center justify-center rounded-3xl border-2 border-black px-4 py-1.5 font-bold text-slate-900 shadow-sm hover:bg-gray-50 focus:border-2  focus:border-indigo-700 focus:outline-none">
+            <BiFilterAlt className="mr-1 text-2xl font-bold" />
             Filtros
           </Menu.Button>
         </div>
@@ -23,7 +23,7 @@ function Dropdown() {
           leaveFrom="transform opacity-100 scale-100"
           leaveTo="transform opacity-0 scale-95"
         >
-          <Menu.Items className="origin-top-left absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+          <Menu.Items className="absolute left-0 mt-2 w-56 origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
             <div className="py-1">
               <Menu.Item>
                 {({ active }) => (
@@ -68,8 +68,7 @@ function Dropdown() {
           </Menu.Items>
         </Transition>
       </Menu>
-      <span className="text-gray-500 font-medium">268 Articulos</span>
-
+      <span className="font-medium text-gray-500">268 Articulos</span>
     </div>
   );
 }
