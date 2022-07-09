@@ -1,18 +1,18 @@
 import Header from './components/Header'
-import Search from './components/Search'
 import Tags from './components/Tags'
 import Details from './components/Details'
-import Filters from './components/Filters'
+import Cards from './components/Cards'
+import Dropdown from './components/Dropdown'
 
 function App() {
   return (
     <div className="App">
-      <main className="h-screen container mx-auto flex flex-col p-3 pt-0">
+      <main className="h-screen container mx-auto flex flex-col p-4 pt-0">
         <Header />
-        <Search />
         <Details />
         <Tags />
-        <Filters />
+        <Dropdown />
+        <Cards />
       </main>
     </div>
   );
