@@ -1,8 +1,9 @@
 import Header from "./components/Header";
 import Tags from "./components/Tags";
 import Details from "./components/Details";
-import Cards from "./components/Cards";
+import CardsContainer from "./components/CardsContainer";
 import Dropdown from "./components/Dropdown";
+import StockToggle from "./components/StockToggle";
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Details />
         <Tags />
         <Dropdown />
-        <Cards />
+        <StockToggle />
+        <CardsContainer />
       </main>
     </div>
   );
