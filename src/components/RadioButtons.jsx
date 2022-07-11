@@ -1,5 +1,6 @@
 import black from '../assets/black.webp'
 import red from '../assets/black.webp'
+import gray from '../assets/gray.webp'
 
 function RadioButtons({ referencia }) {
   const handleColors = (e) => {
