@@ -4,9 +4,9 @@ import red from '../assets/black.webp'
 function RadioButtons({ referencia }) {
   const handleColors = (e) => {
     console.log(e.target.value);
-    referencia.current.src = `./src/assets/${e.target.value}.webp`
+    referencia.current.src = `/assets/${e.target.value}.webp`
     if(e.target.value === "blue") {
-      referencia.current.src = `./src/assets/shirt.webp`
+      referencia.current.src = `/assets/shirt.webp`
     }
   };
 
