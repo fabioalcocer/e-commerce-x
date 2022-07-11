@@ -18,7 +18,13 @@ function Tags() {
           Pantalones
         </li>
         <li className="mr-2 inline-block rounded-3xl bg-gray-100 py-2 px-3 text-black">
-          Vermudas
+          Shorts
+        </li>
+        <li className="mr-2 inline-block rounded-3xl bg-gray-100 py-2 px-3 text-black">
+          Deportivos
+        </li>
+        <li className="mr-2 inline-block rounded-3xl bg-gray-100 py-2 px-3 text-black">
+          Camisetas
         </li>
         <li className="mr-2 inline-block rounded-3xl bg-gray-100 py-2 px-3 text-black">
           Tenis

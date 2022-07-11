@@ -8,7 +8,7 @@ import StockToggle from "./components/StockToggle";
 function App() {
   return (
     <div className="App">
-      <main className="container mx-auto flex h-screen flex-col p-4 pt-0">
+      <main className="container mx-auto flex flex-col p-4 pt-0">
         <Header />
         <Details />
         <Tags />
