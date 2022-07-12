@@ -1,14 +1,19 @@
-import black from '../assets/black.webp'
-import red from '../assets/black.webp'
-import gray from '../assets/gray.webp'
+import black from "../assets/black.webp";
+import red from "../assets/red.webp";
+import gray from "../assets/gray.webp";
 
-function RadioButtons({ referencia }) {
+function RadioButtons({ refImg }) {
+  const arraysImages = [black, red, gray];
+
   const handleColors = (e) => {
     console.log(e.target.value);
-    referencia.current.src = `./src/assets/${e.target.value}.webp`
-    if(e.target.value === "blue") {
-      referencia.current.src = `./src/assets/shirt.webp`
-    }
+
+    arraysImages.map((i) => {
+      if (i.indexOf(e.target.value) !== -1) {
+        console.log(i);
+        refImg.current.src = i;
+      }
+    });
   };
 
   return (
