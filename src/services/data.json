@@ -1,0 +1,50 @@
+[
+  {
+    "id": 1,
+    "name": "Camiseta Amarilla",
+    "price": "80$",
+    "colors": [
+      "red",
+      "gray",
+      "black",
+      "blue "
+    ],
+    "src": "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp"
+  },
+  {
+    "id": 2,
+    "name": "Camiseta de Boquita",
+    "price": "100$",
+    "colors": [
+      "red",
+      "gray",
+      "black",
+      "blue "
+    ],
+    "src": "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp"
+  },
+  {
+    "id": 3,
+    "name": "Camiseta Manchester City",
+    "price": "150$",
+    "colors": [
+      "red",
+      "gray",
+      "black",
+      "blue "
+    ],
+    "src": "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp"
+  },
+  {
+    "id": 4,
+    "name": "Sudadera Nike Travis Scott",
+    "price": "260$",
+    "colors": [
+      "red",
+      "gray",
+      "black",
+      "blue "
+    ],
+    "src": "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp"
+  }
+]
