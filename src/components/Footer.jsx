@@ -2,7 +2,7 @@ import { BsInstagram, BsTwitter, BsFacebook, BsGithub } from "react-icons/bs";
 
 function Footer() {
   return (
-    <footer className="container mx-auto max-w-7xl bg-white py-2 dark:bg-gray-900 sm:py-6 px-2">
+    <footer className="container mx-auto max-w-7xl py-2 dark:bg-gray-900 sm:py-6 px-2">
       <hr className="my-6 border-gray-200 dark:border-gray-700 sm:mx-auto lg:my-8" />
 
       <div className="md:flex md:justify-between">

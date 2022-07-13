@@ -29,7 +29,7 @@ function CardsContainer() {
           {/* TODO Convertir todo esto a componente y crearlos dinamicamente segun los datos de la API */}
             <>
               {products.map((product) => (
-                <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm">
+                <article key={product.id} className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm">
                   <img
                     className="h-80 w-full rounded-md object-cover xl:h-96"
                     src={product.src}

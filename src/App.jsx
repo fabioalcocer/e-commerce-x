@@ -7,8 +7,8 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <main className="container mx-auto flex flex-col bg-white p-4 pt-0">
+    <div className="App bg-white">
+      <main className="container mx-auto flex flex-col p-4 pt-0">
         <section className="container mx-auto max-w-7xl pr-1 md:pr-2">
           <Header />
           <Details />
