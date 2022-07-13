@@ -5,12 +5,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
-function Dropdown() {
+function Filters() {
   return (
-    <div className="mt-4 flex items-center justify-between pt-4">
+    <div className="mt-8 flex items-center justify-between gap-4">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="text-md inline-flex items-center justify-center rounded-3xl border-2 border-black px-4 py-1.5 font-bold text-slate-900 shadow-sm hover:bg-gray-50 focus:border-2  focus:border-indigo-700 focus:outline-none">
+          <Menu.Button className="text-md inline-flex items-center justify-center rounded-3xl border-2 border-black px-4 py-1.5 font-bold text-slate-900 shadow-sm hover:bg-gray-50 focus:border-2  focus:border-slate-500 focus:text-slate-500 focus:outline-none">
             <BiFilterAlt className="mr-1 text-2xl font-bold" />
             Filtros
           </Menu.Button>
@@ -34,7 +34,7 @@ function Dropdown() {
                       "block px-4 py-2 text-sm"
                     )}
                   >
-                    Account settings
+                    Color
                   </a>
                 )}
               </Menu.Item>
@@ -47,7 +47,7 @@ function Dropdown() {
                       "block px-4 py-2 text-sm"
                     )}
                   >
-                    Support
+                    Tamaño
                   </a>
                 )}
               </Menu.Item>
@@ -60,7 +60,7 @@ function Dropdown() {
                       "block px-4 py-2 text-sm"
                     )}
                   >
-                    License
+                    Categoría
                   </a>
                 )}
               </Menu.Item>
@@ -72,4 +72,4 @@ function Dropdown() {
     </div>
   );
 }
-export default Dropdown;
+export default Filters;

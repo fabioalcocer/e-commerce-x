@@ -14,6 +14,10 @@ function RadioButtons({ refImg }) {
         refImg.current.src = i;
       }
     });
+
+    if(e.target.value === "blue") {
+      refImg.current.src = "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp"
+    }
   };
 
   return (
@@ -25,7 +29,7 @@ function RadioButtons({ refImg }) {
           type="radio"
           value="gray"
           name="colored-radio"
-          className="h-5 w-5 border-gray-300 bg-gray-700 text-gray-700 focus:ring-2 focus:ring-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-gray-600"
+          className="h-5 w-5 border-gray-300 bg-gray-600 text-gray-700 focus:ring-2 focus:ring-gray-400 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-gray-600"
         />
       </div>
       <div className="flex items-center">

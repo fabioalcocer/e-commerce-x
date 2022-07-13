@@ -9,18 +9,18 @@ function Card() {
     <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm">
       <img
         ref={refBg}
-        className="h-80 w-full rounded-md object-cover xl:h-80"
+        className="h-80 w-full rounded-md object-cover xl:h-96"
         src={shirt}
         alt="T-Shirt"
       />
       <div className="mt-1 flex w-full items-center justify-between py-2">
         <h4 className="text-lg font-medium text-gray-700">Printed T-shirt</h4>
-        <p className="font-bold text-green-700">$12.55</p>
+        <p className="font-bold text-green-600">$12.55</p>
       </div>
 
       <RadioButtons refImg={refBg}/>
 
-      <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-gray-700 focus:bg-gray-700 focus:outline-none">
+      <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="mx-1 h-5 w-5"
