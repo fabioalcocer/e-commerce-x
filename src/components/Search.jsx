@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { BiSearch, BiCart } from "react-icons/bi";
-import { BsWhatsapp } from "react-icons/bs";
+import { BiSearch, BiCart, BiMoon } from "react-icons/bi";
 
 function Search() {
   const [search, setSearch] = useState("");
@@ -10,20 +9,53 @@ function Search() {
     console.log(search);
   };
 
+  const onDarkMode = () => {
+    document.documentElement.classList.toggle("dark");
+  };
+
+  const showSlide = () => {
+    const slide = document.getElementById("slide-cart");
+
+    slide.classList.replace("-right-full", "right-0");
+  };
+
   return (
     <div className="relative mx-auto flex items-center gap-2 text-gray-600 dark:text-slate-300 md:mx-0 lg:gap-3">
       <BiSearch className="absolute left-2 top-1/2 mt-0.5 -translate-y-1/2 transform text-2xl text-gray-500 lg:mt-0" />
       <input
         onChange={handleSearch}
-        className="h-10 w-full rounded-3xl border-2 border-slate-300 bg-white px-10 pr-5 text-sm font-semibold focus:border-slate-400 focus:outline-none md:w-auto"
+        className="h-10 w-full rounded-3xl border-2 border-slate-300 bg-white px-10 pr-5 text-sm font-semibold 
+        focus:border-slate-600 focus:outline-none focus:ring-0 dark:border-slate-500 dark:bg-slate-800 
+        dark:text-slate-200 dark:placeholder-slate-300 dark:focus:border-gray-400 md:w-auto"
         type="search"
         name="search"
         placeholder="Buscar"
       />
-      <BsWhatsapp className="transition-colors: cursor-pointer text-3xl duration-300 hover:text-green-500  dark:hover:text-emerald-500" />
-      <BiCart className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500" />
+      <BiMoon
+        onClick={onDarkMode}
+        className="transition-colors: cursor-pointer text-3xl text-slate-600 duration-300 hover:text-black dark:text-slate-200  dark:hover:text-white"
+      />
+      <BiCart
+        onClick={showSlide}
+        className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500"
+      />
     </div>
   );
 }
 
 export default Search;
+
+// const preferedColorScheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+// const slider = document.getElementById('slider');
+
+// const setTheme = (theme) => {
+//     document.documentElement.setAttribute('data-theme', theme);
+//     localStorage.setItem('theme', theme);
+// }
+
+// slider.addEventListener('click', ()  => {
+//     let switchToTheme = localStorage.getItem('theme') === 'dark' ? 'light' : 'dark';
+//     setTheme(switchToTheme);
+// });
+
+// setTheme(localStorage.getItem('theme') || preferedColorScheme);

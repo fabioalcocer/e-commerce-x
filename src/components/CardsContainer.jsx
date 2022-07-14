@@ -1,5 +1,5 @@
-import Card from "./Card";
 import { data } from "../services/data";
+import Card from "./Card";
 
 function CardsContainer() {
   return (

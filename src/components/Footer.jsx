@@ -31,28 +31,28 @@ function Footer() {
           <a
             target="_blank"
             href="https://github.com/fabioalcocer/e-commerce-x"
-            className="text-2xl text-gray-500 hover:text-blue-500 dark:hover:text-white"
+            className="transition-colors: text-2xl text-gray-500 duration-300 hover:text-blue-500 dark:hover:text-white"
           >
             <BsFacebook />
           </a>
           <a
             target="_blank"
             href="https://github.com/fabioalcocer/e-commerce-x"
-            className="text-2xl text-gray-500 hover:text-pink-500 dark:hover:text-white"
+            className="transition-colors: text-2xl text-gray-500 duration-300 hover:text-pink-500 dark:hover:text-white"
           >
             <BsInstagram />
           </a>
           <a
             target="_blank"
             href="https://github.com/fabioalcocer/e-commerce-x"
-            className="text-2xl text-gray-500 hover:text-blue-400 dark:hover:text-white"
+            className="transition-colors: text-2xl text-gray-500 duration-300 hover:text-blue-400 dark:hover:text-white"
           >
             <BsTwitter />
           </a>
           <a
             target="_blank"
             href="https://github.com/fabioalcocer/e-commerce-x"
-            className="text-2xl text-gray-500 hover:text-black dark:hover:text-white"
+            className="transition-colors: text-2xl text-gray-500 duration-300 hover:text-black dark:hover:text-white"
           >
             <BsGithub />
           </a>
