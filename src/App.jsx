@@ -7,7 +7,7 @@ import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="App bg-white">
+    <div className="App transition-colors: duration-500 bg-white dark:bg-slate-900 ">
       <main className="container mx-auto flex flex-col p-4 pt-0">
         <section className="container mx-auto max-w-7xl pr-1 md:pr-2">
           <Header />

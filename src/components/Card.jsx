@@ -1,20 +1,21 @@
 import RadioButtons from "./RadioButtons";
 import { useRef } from "react";
+import shirt from '../assets/shirt.webp'
 
 function Card(product) {
   const refBg = useRef(null);
 
   return (
-    <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm">
+    <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm dark:shadow-slate-800">
       <img
         ref={refBg}
         className="h-80 w-full rounded-md object-cover xl:h-96"
-        src={product.src}
+        src={shirt}
         alt="T-Shirt"
       />
       <div className="mt-1 flex w-full items-center justify-between py-2">
-        <h4 className="text-lg font-medium text-gray-700">{product.name}</h4>
-        <p className="font-bold text-green-600">{product.price}</p>
+        <h4 className="text-lg font-medium text-gray-700 dark:text-slate-200">{product.name}</h4>
+        <p className="font-bold text-green-600 dark:text-emerald-500">{product.price}</p>
       </div>
 
       <RadioButtons refImg={refBg} />
