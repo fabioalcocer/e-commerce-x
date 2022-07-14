@@ -1,7 +1,7 @@
-[
+export const data = [
   {
     "id": 1,
-    "name": "Camiseta Amarilla",
+    "name": "Camiseta Puma",
     "price": "80$",
     "colors": [
       "red",
@@ -13,7 +13,7 @@
   },
   {
     "id": 2,
-    "name": "Camiseta de Boquita",
+    "name": "Sudadera Nike",
     "price": "100$",
     "colors": [
       "red",
@@ -25,7 +25,7 @@
   },
   {
     "id": 3,
-    "name": "Camiseta Manchester City",
+    "name": "Polera City",
     "price": "150$",
     "colors": [
       "red",
@@ -37,7 +37,7 @@
   },
   {
     "id": 4,
-    "name": "Sudadera Nike Travis Scott",
+    "name": "Short Adidas",
     "price": "260$",
     "colors": [
       "red",

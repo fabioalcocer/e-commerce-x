@@ -3,7 +3,7 @@ import shirt from "../assets/shirt.webp";
 import { useRef } from "react";
 
 function Card() {
-  const refBg = useRef(null)
+  const refBg = useRef(null);
 
   return (
     <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm">
@@ -18,7 +18,7 @@ function Card() {
         <p className="font-bold text-green-600">$12.55</p>
       </div>
 
-      <RadioButtons refImg={refBg}/>
+      <RadioButtons refImg={refBg} />
 
       <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none">
         <svg

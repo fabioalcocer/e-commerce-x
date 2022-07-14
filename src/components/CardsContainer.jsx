@@ -1,17 +1,8 @@
 import Card from "./Card";
-import { useEffect, useState } from "react";
-import { getAllProducts } from "../services/products";
 import RadioButtons from "./RadioButtons";
+import { data } from "../services/data";
 
 function CardsContainer() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    getAllProducts()
-      .then(setProducts)
-      .catch((err) => console.error(err));
-  }, []);
-
   return (
     <section className="container mx-auto pb-5">
       <div className="lg:-mx-2 lg:flex">
@@ -25,11 +16,12 @@ function CardsContainer() {
             <Card />
             <Card />
             <Card />
-            
-          {/* TODO Convertir todo esto a componente y crearlos dinamicamente segun los datos de la API */}
             <>
-              {products.map((product) => (
-                <article key={product.id} className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm">
+              {data.map((product) => (
+                <article
+                  key={product.id}
+                  className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm"
+                >
                   <img
                     className="h-80 w-full rounded-md object-cover xl:h-96"
                     src={product.src}
@@ -39,11 +31,10 @@ function CardsContainer() {
                     <h4 className="text-lg font-medium text-gray-700">
                       {product.name}
                     </h4>
-                  </div>
-                  <div className="flex justify-between pr-2">
                     <p className="font-bold text-green-600">{product.price}</p>
-                    <RadioButtons />
                   </div>
+
+                  <RadioButtons />
                   <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -66,3 +57,9 @@ function CardsContainer() {
 }
 
 export default CardsContainer;
+
+// useEffect(() => {
+//   getAllProducts()
+//     .then(setProducts)
+//     .catch((err) => console.error(err));
+// }, []);
