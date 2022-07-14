@@ -1,8 +1,7 @@
 import RadioButtons from "./RadioButtons";
-import shirt from "../assets/shirt.webp";
 import { useRef } from "react";
 
-function Card() {
+function Card(product) {
   const refBg = useRef(null);
 
   return (
@@ -10,12 +9,12 @@ function Card() {
       <img
         ref={refBg}
         className="h-80 w-full rounded-md object-cover xl:h-96"
-        src={shirt}
+        src={product.src}
         alt="T-Shirt"
       />
       <div className="mt-1 flex w-full items-center justify-between py-2">
-        <h4 className="text-lg font-medium text-gray-700">Printed T-shirt</h4>
-        <p className="font-bold text-green-600">$12.55</p>
+        <h4 className="text-lg font-medium text-gray-700">{product.name}</h4>
+        <p className="font-bold text-green-600">{product.price}</p>
       </div>
 
       <RadioButtons refImg={refBg} />
