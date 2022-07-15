@@ -20,9 +20,3 @@ function CardsContainer() {
 }
 
 export default CardsContainer;
-
-// useEffect(() => {
-//   getAllProducts()
-//     .then(setProducts)
-//     .catch((err) => console.error(err));
-// }, []);

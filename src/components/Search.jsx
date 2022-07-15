@@ -13,12 +13,6 @@ function Search() {
     document.documentElement.classList.toggle("dark");
   };
 
-  const showSlide = () => {
-    const slide = document.getElementById("slide-cart");
-
-    slide.classList.replace("-right-full", "right-0");
-  };
-
   return (
     <div className="relative mx-auto flex items-center gap-2 text-gray-600 dark:text-slate-300 md:mx-0 lg:gap-3">
       <BiSearch className="absolute left-2 top-1/2 mt-0.5 -translate-y-1/2 transform text-2xl text-gray-500 lg:mt-0" />
@@ -35,10 +29,7 @@ function Search() {
         onClick={onDarkMode}
         className="transition-colors: cursor-pointer text-3xl text-slate-600 duration-300 hover:text-black dark:text-slate-200  dark:hover:text-white"
       />
-      <BiCart
-        onClick={showSlide}
-        className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500"
-      />
+      <BiCart className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500" />
     </div>
   );
 }

@@ -1,39 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle } from "react-icons/bi";
-
-const products = [
-  {
-    id: 1,
-    name: "Throwback Hip Bag",
-    href: "#",
-    color: "Salmon",
-    price: 120,
-    quantity: 1,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-  },
-  {
-    id: 2,
-    name: "Medium Stuff Satchel",
-    href: "#",
-    color: "Blue",
-    price: 150,
-    quantity: 7,
-    imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
-  },
-  {
-    id: 3,
-    name: "Polera City",
-    href: "#",
-    color: "red",
-    price: 100,
-    quantity: 3,
-    imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp",
-  },
-];
+import { data as products}  from "../services/data";
 
 const reduce = products.reduce(
   (acumulador, actual) => acumulador + actual.price,
@@ -105,21 +73,16 @@ function SlideCart() {
 
                                 <div className="ml-4 flex flex-1 flex-col">
                                   <div>
-                                    <div className="flex justify-between text-base font-medium text-gray-900">
-                                      <h3>
-                                        <a href={product.href}>
-                                          {" "}
-                                          {product.name}{" "}
-                                        </a>
-                                      </h3>
-                                      <p className="ml-4">{product.price}</p>
+                                    <div className="flex justify-between text-lg font-semibold text-gray-900">
+                                      <h3>{product.name}</h3>
+                                      <p className="ml-4 text-emerald-700 font-semibold">{`$${product.price}`}</p>
                                     </div>
-                                    <p className="mt-1 text-sm text-gray-500">
-                                      {product.color}
+                                    <p className="mt-1 text-base text-gray-500 capitalize">
+                                      {product.colors[0]}
                                     </p>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between">
-                                    <p className="text-lg text-gray-500">
+                                    <p className="text-base text-gray-500">
                                       Cantidad: {product.quantity}
                                     </p>
 
@@ -133,7 +96,7 @@ function SlideCart() {
                                           );
                                         }}
                                         type="button"
-                                        className="font-medium text-indigo-600 hover:text-indigo-500"
+                                        className="font-semibold text-indigo-600 hover:text-indigo-500"
                                       >
                                         Remove
                                       </button>
