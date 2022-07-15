@@ -8,7 +8,7 @@ const products = [
     name: "Throwback Hip Bag",
     href: "#",
     color: "Salmon",
-    price: "$90.00",
+    price: 120,
     quantity: 1,
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
@@ -18,7 +18,7 @@ const products = [
     name: "Medium Stuff Satchel",
     href: "#",
     color: "Blue",
-    price: "$32.00",
+    price: 150,
     quantity: 7,
     imageSrc:
       "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg",
@@ -28,17 +28,21 @@ const products = [
     name: "Polera City",
     href: "#",
     color: "red",
-    price: "150$",
+    price: 100,
     quantity: 3,
     imageSrc:
       "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp",
   },
-  // More products...
 ];
+
+const reduce = products.reduce(
+  (acumulador, actual) => acumulador + actual.price,
+  0
+);
 
 function SlideCart() {
   const [open, setOpen] = useState(true);
-  const [productx, setProduct] = useState([]);
+  const [productx, setProduct] = useState([...products]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -89,7 +93,7 @@ function SlideCart() {
                             role="list"
                             className="-my-6 divide-y divide-gray-200"
                           >
-                            {products.map((product) => (
+                            {productx.map((product) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                   <img
@@ -122,8 +126,11 @@ function SlideCart() {
                                     <div className="flex">
                                       <button
                                         onClick={() => {
-                                          setProduct(products);
-                                          console.log(productx)
+                                          setProduct(
+                                            productx.filter(
+                                              (x) => x.id !== product.id
+                                            )
+                                          );
                                         }}
                                         type="button"
                                         className="font-medium text-indigo-600 hover:text-indigo-500"
@@ -143,7 +150,7 @@ function SlideCart() {
                     <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-lg font-medium text-gray-900">
                         <p>Total</p>
-                        <p>$262.00</p>
+                        <p>{`$${reduce}`}</p>
                       </div>
                       <p className="mt-0.5 text-base text-gray-500">
                         Monto total a pagar
@@ -181,26 +188,3 @@ function SlideCart() {
 }
 
 export default SlideCart;
-
-// import { useRef } from "react";
-// import { BiChevronRightCircle } from "react-icons/bi";
-
-// function SlideCart() {
-//   const slideRef = useRef(null);
-
-//   const hiddenSlide = () => {
-//     slideRef.current.classList.replace("right-0", "-right-full");
-//   };
-
-//   return (
-//     <div
-//       ref={slideRef}
-//       id="slide-cart"
-//       className="absolute top-0 -right-full h-full w-80 rounded-l-xl bg-slate-100 p-2 duration-500"
-//     >
-//       <BiChevronRightCircle className="absolute top-1/2 text-4xl bg-slate-700 text-slate-100 -ml-5 rounded-full" onClick={hiddenSlide} />
-//     </div>
-//   );
-// }
-
-// export default SlideCart;

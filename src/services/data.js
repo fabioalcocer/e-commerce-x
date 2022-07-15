@@ -2,7 +2,7 @@ export const data = [
   {
     "id": 1,
     "name": "Camiseta Puma",
-    "price": "80$",
+    "price": "$180",
     "colors": [
       "red",
       "gray",
@@ -14,7 +14,7 @@ export const data = [
   {
     "id": 2,
     "name": "Sudadera Nike",
-    "price": "100$",
+    "price": "$100",
     "colors": [
       "red",
       "gray",
@@ -26,7 +26,7 @@ export const data = [
   {
     "id": 3,
     "name": "Polera City",
-    "price": "150$",
+    "price": "$150",
     "colors": [
       "red",
       "gray",
@@ -38,7 +38,7 @@ export const data = [
   {
     "id": 4,
     "name": "Short Adidas",
-    "price": "260$",
+    "price": "$160",
     "colors": [
       "red",
       "gray",
@@ -50,7 +50,7 @@ export const data = [
   {
     "id": 5,
     "name": "Camiseta Puma",
-    "price": "80$",
+    "price": "$180",
     "colors": [
       "red",
       "gray",
@@ -62,7 +62,7 @@ export const data = [
   {
     "id": 6,
     "name": "Sudadera Nike",
-    "price": "100$",
+    "price": "$100",
     "colors": [
       "red",
       "gray",
@@ -74,7 +74,7 @@ export const data = [
   {
     "id": 7,
     "name": "Polera City",
-    "price": "150$",
+    "price": "$150",
     "colors": [
       "red",
       "gray",
@@ -86,7 +86,7 @@ export const data = [
   {
     "id": 8,
     "name": "Short Adidas",
-    "price": "260$",
+    "price": "$160",
     "colors": [
       "red",
       "gray",
@@ -98,7 +98,7 @@ export const data = [
   {
     "id": 9,
     "name": "Camiseta Puma",
-    "price": "80$",
+    "price": "$180",
     "colors": [
       "red",
       "gray",
@@ -110,7 +110,7 @@ export const data = [
   {
     "id": 10,
     "name": "Sudadera Nike",
-    "price": "100$",
+    "price": "$100",
     "colors": [
       "red",
       "gray",
@@ -122,7 +122,7 @@ export const data = [
   {
     "id": 11,
     "name": "Polera City",
-    "price": "150$",
+    "price": "$150",
     "colors": [
       "red",
       "gray",
@@ -134,7 +134,7 @@ export const data = [
   {
     "id": 12,
     "name": "Short Adidas",
-    "price": "260$",
+    "price": "$160",
     "colors": [
       "red",
       "gray",
