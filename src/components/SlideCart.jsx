@@ -3,6 +3,9 @@ import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle } from "react-icons/bi";
 import { data as products } from "../services/data";
 
+
+// TODO Hacer que el reduce actualize su valor cuando borro productos
+
 const reduce = products.reduce(
   (acumulador, actual) => acumulador + actual.price,
   0
@@ -113,7 +116,7 @@ function SlideCart() {
                     <div className="border-t border-slate-700 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-lg font-medium text-gray-900 dark:text-slate-200">
                         <p className="font-semibold ">Total</p>
-                        <p className="font-semibold text-emerald-400">{`$${reduce}`}</p>
+                        <p className="font-semibold text-emerald-600 dark:text-emerald-500">{`$${reduce}`}</p>
                       </div>
                       <p className="mt-0.5 text-base text-gray-500 dark:text-gray-300">
                         Monto total a pagar
