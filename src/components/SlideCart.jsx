@@ -1,7 +1,7 @@
 import { Fragment, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle } from "react-icons/bi";
-import { data as products}  from "../services/data";
+import { data as products } from "../services/data";
 
 const reduce = products.reduce(
   (acumulador, actual) => acumulador + actual.price,
@@ -40,7 +40,7 @@ function SlideCart() {
                 leaveTo="translate-x-full"
               >
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
-                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl">
+                  <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl dark:bg-gray-900">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-900">
@@ -59,11 +59,11 @@ function SlideCart() {
                         <div className="flow-root">
                           <ul
                             role="list"
-                            className="-my-6 divide-y divide-gray-200"
+                            className="-my-6 divide-y divide-slate-300 dark:divide-slate-600"
                           >
                             {productx.map((product) => (
                               <li key={product.id} className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600">
                                   <img
                                     src={product.imageSrc}
                                     alt={product.imageAlt}
@@ -73,16 +73,16 @@ function SlideCart() {
 
                                 <div className="ml-4 flex flex-1 flex-col">
                                   <div>
-                                    <div className="flex justify-between text-lg font-semibold text-gray-900">
+                                    <div className="flex justify-between text-lg font-semibold text-gray-900 dark:text-slate-200">
                                       <h3>{product.name}</h3>
-                                      <p className="ml-4 text-emerald-700 font-semibold">{`$${product.price}`}</p>
+                                      <p className="ml-4 font-semibold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
                                     </div>
-                                    <p className="mt-1 text-base text-gray-500 capitalize">
+                                    <p className="mt-1 text-base capitalize text-gray-500 dark:text-gray-300">
                                       {product.colors[0]}
                                     </p>
                                   </div>
                                   <div className="flex flex-1 items-end justify-between">
-                                    <p className="text-base text-gray-500">
+                                    <p className="text-sm text-gray-500 dark:text-gray-200 md:text-base">
                                       Cantidad: {product.quantity}
                                     </p>
 
@@ -96,7 +96,7 @@ function SlideCart() {
                                           );
                                         }}
                                         type="button"
-                                        className="font-semibold text-indigo-600 hover:text-indigo-500"
+                                        className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
                                       >
                                         Remove
                                       </button>
@@ -110,12 +110,12 @@ function SlideCart() {
                       </div>
                     </div>
 
-                    <div className="border-t border-gray-200 py-6 px-4 sm:px-6">
-                      <div className="flex justify-between text-lg font-medium text-gray-900">
-                        <p>Total</p>
-                        <p>{`$${reduce}`}</p>
+                    <div className="border-t border-slate-700 py-6 px-4 sm:px-6">
+                      <div className="flex justify-between text-lg font-medium text-gray-900 dark:text-slate-200">
+                        <p className="font-semibold ">Total</p>
+                        <p className="font-semibold text-emerald-400">{`$${reduce}`}</p>
                       </div>
-                      <p className="mt-0.5 text-base text-gray-500">
+                      <p className="mt-0.5 text-base text-gray-500 dark:text-gray-300">
                         Monto total a pagar
                       </p>
                       <div className="mt-6">
@@ -126,17 +126,14 @@ function SlideCart() {
                           Completar pago
                         </a>
                       </div>
-                      <div className="mt-6 flex justify-center text-center text-gray-500">
-                        <p>
-                          o{" "}
-                          <button
-                            type="button"
-                            className="text-lg font-medium text-indigo-600 hover:text-indigo-500"
-                            onClick={() => setOpen(false)}
-                          >
-                            Sigue comprando
-                          </button>
-                        </p>
+                      <div className="mt-6 flex justify-center text-center text-gray-500 dark:text-gray-300">
+                        <button
+                          type="button"
+                          className="text-lg font-medium text-indigo-600 hover:text-indigo-500 dark:text-indigo-500"
+                          onClick={() => setOpen(false)}
+                        >
+                          Sigue comprando
+                        </button>
                       </div>
                     </div>
                   </div>

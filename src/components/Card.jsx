@@ -13,13 +13,15 @@ function Card(product) {
         alt="T-Shirt"
       />
       <div className="mt-1 flex w-full items-center justify-between py-2">
-        <h4 className="text-lg font-medium text-gray-700 dark:text-slate-200">{product.name}</h4>
+        <h4 className="text-lg font-medium text-gray-700 dark:text-slate-200">
+          {product.name}
+        </h4>
         <p className="font-bold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
       </div>
 
       <RadioButtons refImg={refBg} />
 
-      <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none">
+      <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="mx-1 h-5 w-5"
