@@ -3,17 +3,17 @@ import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle } from "react-icons/bi";
 import { data as products } from "../services/data";
 
+const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
 
-// TODO Hacer que el reduce actualize su valor cuando borro productos
-
-const reduce = products.reduce(
-  (acumulador, actual) => acumulador + actual.price,
-  0
-);
-
-function SlideCart() {
-  const [open, setOpen] = useState(true);
+function SlideCart({ abierto }) {
+  const [open, setOpen] = useState(abierto);
   const [productx, setProduct] = useState([...products]);
+  const [total, setTotal] = useState(reduce);
+
+  const reducePrice = () => {
+    setTotal(() => productx.reduce((acc, curr) => acc + curr.price, 0));
+    console.log("Precio reducido" + total);
+  };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -92,11 +92,12 @@ function SlideCart() {
                                     <div className="flex">
                                       <button
                                         onClick={() => {
-                                          setProduct(
-                                            productx.filter(
-                                              (x) => x.id !== product.id
-                                            )
-                                          );
+                                          reducePrice(),
+                                            setProduct(
+                                              productx.filter(
+                                                (x) => x.id !== product.id
+                                              )
+                                            );
                                         }}
                                         type="button"
                                         className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
@@ -116,7 +117,7 @@ function SlideCart() {
                     <div className="border-t border-slate-700 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-lg font-medium text-gray-900 dark:text-slate-200">
                         <p className="font-semibold ">Total</p>
-                        <p className="font-semibold text-emerald-600 dark:text-emerald-500">{`$${reduce}`}</p>
+                        <p className="font-semibold text-emerald-600 dark:text-emerald-500">{`$${total}`}</p>
                       </div>
                       <p className="mt-0.5 text-base text-gray-500 dark:text-gray-300">
                         Monto total a pagar

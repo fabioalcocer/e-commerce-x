@@ -4,7 +4,6 @@ import Details from "./components/Details";
 import CardsContainer from "./components/CardsContainer";
 import Filters from "./components/Filters";
 import Footer from "./components/Footer";
-import SlideCart from "./components/SlideCart";
 
 function App() {
   return (
@@ -19,7 +18,6 @@ function App() {
         <CardsContainer />
         <Footer />
       </main>
-      <SlideCart />
     </div>
   );
 }
