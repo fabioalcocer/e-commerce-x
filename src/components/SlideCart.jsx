@@ -10,10 +10,10 @@ function SlideCart({ abierto }) {
   const [productx, setProduct] = useState([...products]);
   const [total, setTotal] = useState(reduce);
 
-  const reducePrice = () => {
-    setTotal(() => productx.reduce((acc, curr) => acc + curr.price, 0));
-    console.log("Precio reducido" + total);
-  };
+  // const reducePrice = () => {
+  //   setTotal((reduce) => reduce - 100);
+  //   console.log("Precio reducido");
+  // };
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -92,7 +92,9 @@ function SlideCart({ abierto }) {
                                     <div className="flex">
                                       <button
                                         onClick={() => {
-                                          reducePrice(),
+                                          setTotal(
+                                            (reduce) => reduce - product.price
+                                          ),
                                             setProduct(
                                               productx.filter(
                                                 (x) => x.id !== product.id
