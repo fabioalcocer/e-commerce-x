@@ -1,19 +1,20 @@
-import { Fragment, useState } from "react";
+import { Fragment, useState, useEffect } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle } from "react-icons/bi";
-import { data as products } from "../services/data";
-
-const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
+import { productsCart as products } from "./Card";
 
 function SlideCart({ abierto }) {
+  const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
+
   const [open, setOpen] = useState(abierto);
   const [productx, setProduct] = useState([...products]);
   const [total, setTotal] = useState(reduce);
 
-  // const reducePrice = () => {
-  //   setTotal((reduce) => reduce - 100);
-  //   console.log("Precio reducido");
-  // };
+  useEffect(() => {
+    if (total === 0) {
+      console.log(`el total es 0`);
+    }
+  }, [total]);
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -126,6 +127,9 @@ function SlideCart({ abierto }) {
                       </p>
                       <div className="mt-6">
                         <a
+                          onClick={() => {
+                            console.log("whatsapp");
+                          }}
                           href="#"
                           className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
                         >

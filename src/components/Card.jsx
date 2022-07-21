@@ -1,6 +1,8 @@
 import RadioButtons from "./RadioButtons";
 import { useRef } from "react";
 
+export const productsCart = [];
+
 function Card(product) {
   const refBg = useRef(null);
 
@@ -21,7 +23,13 @@ function Card(product) {
 
       <RadioButtons refImg={refBg} />
 
-      <button className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700">
+      <button
+        onClick={() => {
+          productsCart.push(product);
+          console.log(productsCart)
+        }}
+        className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700"
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           className="mx-1 h-5 w-5"
@@ -30,7 +38,7 @@ function Card(product) {
         >
           <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
         </svg>
-        <span className="mx-1">Add to cart</span>
+        <span className="mx-1">Añadir al carrito</span>
       </button>
     </article>
   );

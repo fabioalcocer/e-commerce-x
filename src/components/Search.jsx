@@ -9,6 +9,7 @@ function Search() {
   const handleSearch = (e) => {
     setSearch(e.target.value);
     console.log(search);
+    // TODO El console.log miente, si funciona, el estado ta bien
   };
 
   const onDarkMode = () => {
