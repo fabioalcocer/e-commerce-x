@@ -51,8 +51,8 @@ function Search() {
           {products.length}
         </p>
       </div>
-      <SlideCart abierto={openS} />
-      {/* {openS ? <SlideCart abierto={openS} /> : ""} */}
+      {/* <SlideCart abierto={openS} /> */}
+      {openS ? <SlideCart abierto={openS} /> : ""}
     </>
   );
 }
