@@ -3,7 +3,7 @@ import { useRef } from "react";
 
 export const productsCart = [];
 
-function Card(product) {
+function Card({product, showNotification}) {
   const refBg = useRef(null);
 
   return (
@@ -25,8 +25,9 @@ function Card(product) {
 
       <button
         onClick={() => {
+          showNotification(),
           productsCart.push(product);
-          console.log(productsCart)
+          console.log(productsCart);
         }}
         className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700"
       >
