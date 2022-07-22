@@ -11,8 +11,7 @@ function CardsContainer() {
 
     setTimeout(() => {
       refNotification.current.style.visibility = "hidden"
-  
-    }, 3000);
+    }, 2000);
     
   }
 
