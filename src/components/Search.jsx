@@ -1,9 +1,9 @@
-import AppContext from "../Context.jsx";
+import { AppContext } from "../Context.jsx";
 import { useState, useContext } from "react";
 import { BiSearch, BiCart, BiMoon } from "react-icons/bi";
 
 function Search() {
-  const { count } = useContext(AppContext);
+  const { count, openSlide } = useContext(AppContext);
 
   const [search, setSearch] = useState("");
 
@@ -33,7 +33,10 @@ function Search() {
           onClick={onDarkMode}
           className="transition-colors: cursor-pointer text-3xl text-slate-600 duration-300 hover:text-black dark:text-slate-200  dark:hover:text-white"
         />
-        <BiCart className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500" />
+        <BiCart
+          onClick={openSlide}
+          className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500"
+        />
         <p className="absolute right-0 -mt-5 -mr-2 h-5 w-5 rounded-[50%] bg-red-500 text-center text-sm font-bold text-white ">
           {count}
         </p>

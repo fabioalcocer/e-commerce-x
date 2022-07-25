@@ -1,23 +1,17 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useContext } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle } from "react-icons/bi";
-import { productsCart as products } from "./Card";
 
-function SlideCart({ abierto }) {
+import { AppContext, ProductContext } from "../Context.jsx";
+
+function SlideCart() {
+  const { openS, setOpen, handleCount } = useContext(AppContext);
+  const { products, setProducts } = useContext(ProductContext);
+
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
 
-  const [open, setOpen] = useState(abierto);
-  const [productx, setProduct] = useState([...products]);
-  const [total, setTotal] = useState(reduce);
-
-  useEffect(() => {
-    if (total === 1000) {
-      console.log(`deja de comprar bro`);
-    }
-  }, [total]);
-
   return (
-    <Transition.Root show={open} as={Fragment}>
+    <Transition.Root show={openS} as={Fragment}>
       <Dialog as="div" className="relative z-10" onClose={setOpen}>
         <Transition.Child
           as={Fragment}
@@ -65,7 +59,7 @@ function SlideCart({ abierto }) {
                             role="list"
                             className="-my-6 divide-y divide-slate-300 dark:divide-slate-600"
                           >
-                            {productx.map((product) => (
+                            {products.map((product) => (
                               <li key={product.id} className="flex py-6">
                                 <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600">
                                   <img
@@ -93,14 +87,12 @@ function SlideCart({ abierto }) {
                                     <div className="flex">
                                       <button
                                         onClick={() => {
-                                          setTotal(
-                                            (reduce) => reduce - product.price
-                                          ),
-                                            setProduct(
-                                              productx.filter(
+                                          (reduce) => reduce - product.price,
+                                            setProducts(
+                                              products.filter(
                                                 (x) => x.id !== product.id
                                               )
-                                            );
+                                            )
                                         }}
                                         type="button"
                                         className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
@@ -120,7 +112,7 @@ function SlideCart({ abierto }) {
                     <div className="border-t border-slate-700 py-6 px-4 sm:px-6">
                       <div className="flex justify-between text-lg font-medium text-gray-900 dark:text-slate-200">
                         <p className="font-semibold ">Total</p>
-                        <p className="font-semibold text-emerald-600 dark:text-emerald-500">{`$${total}`}</p>
+                        <p className="font-semibold text-emerald-600 dark:text-emerald-500">{`$${reduce}`}</p>
                       </div>
                       <p className="mt-0.5 text-base text-gray-500 dark:text-gray-300">
                         Monto total a pagar

@@ -1,13 +1,12 @@
 import RadioButtons from "./RadioButtons";
 import { useRef, useContext } from "react";
-import AppContext from "../Context.jsx";
+import { AppContext, ProductContext } from "../Context.jsx";
 
-export const productsCart = [];
-
-function Card({product, showNotification}) {
+function Card({ product, showNotification }) {
   const refBg = useRef(null);
 
-  const { handleCount } = useContext(AppContext)
+  const { handleCount } = useContext(AppContext);
+  const { products, setProducts } = useContext(ProductContext);
 
   return (
     <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm dark:shadow-slate-800">
@@ -28,10 +27,9 @@ function Card({product, showNotification}) {
 
       <button
         onClick={() => {
-          handleCount(),
-          showNotification(),
-          productsCart.push(product);
-          console.log(productsCart);
+          handleCount(products),
+            showNotification(),
+            setProducts([...products, product]);
         }}
         className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700"
       >
