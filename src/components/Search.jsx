@@ -1,21 +1,15 @@
-import { useEffect, useState } from "react";
+import AppContext from "../Context.jsx";
+import { useState, useContext } from "react";
 import { BiSearch, BiCart, BiMoon } from "react-icons/bi";
-import { productsCart as products } from "./Card";
-import SlideCart from "./SlideCart";
 
 function Search() {
-  const [search, setSearch] = useState("");
-  const [openS, setOpenS] = useState(false);
-  const [count, setCount] = useState(products.length);
+  const { count } = useContext(AppContext);
 
-  useEffect(() => {
-    setCount(products.length);
-  }, [count]);
+  const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
     console.log(search);
-    // TODO El console.log miente, si funciona, el estado ta bien
   };
 
   const onDarkMode = () => {
@@ -39,20 +33,11 @@ function Search() {
           onClick={onDarkMode}
           className="transition-colors: cursor-pointer text-3xl text-slate-600 duration-300 hover:text-black dark:text-slate-200  dark:hover:text-white"
         />
-        <BiCart
-          onClick={() => {
-            setOpenS(true);
-          }}
-          className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500"
-        />
-        <p
-          className="absolute right-0 -mt-5 -mr-2 h-5 w-5 rounded-[50%] bg-red-500 text-center text-sm font-bold text-white "
-        >
-          {products.length}
+        <BiCart className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500" />
+        <p className="absolute right-0 -mt-5 -mr-2 h-5 w-5 rounded-[50%] bg-red-500 text-center text-sm font-bold text-white ">
+          {count}
         </p>
       </div>
-      {/* <SlideCart abierto={openS} /> */}
-      {openS ? <SlideCart abierto={openS} /> : ""}
     </>
   );
 }

@@ -17,7 +17,7 @@ function Notification({ refNoti }) {
       </div>
 
       <div className="-mx-3 p-3">
-        <div className="flex flex-col gap-1 mx-3">
+        <div className="mx-3 flex flex-col gap-1">
           <span className="font-semibold text-emerald-500 dark:text-emerald-400">
             Realizado
           </span>

@@ -1,19 +1,20 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { data as products } from "../services/data";
 import Notification from "./Notification";
+import SlideCart from "./SlideCart";
 import Card from "./Card";
 
 function CardsContainer() {
   const refNotification = useRef(null);
+  const [openS, setOpenS] = useState(false);
 
   const showNotification = () => {
-    refNotification.current.style.visibility = "visible"
+    refNotification.current.style.visibility = "visible";
 
     setTimeout(() => {
-      refNotification.current.style.visibility = "hidden"
+      refNotification.current.style.visibility = "hidden";
     }, 2000);
-    
-  }
+  };
 
   return (
     <>
@@ -24,13 +25,18 @@ function CardsContainer() {
             <div className="mt-4 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
               <>
                 {products.map((product) => (
-                  <Card key={product.id} product={product} showNotification={showNotification} />
+                  <Card
+                    key={product.id}
+                    product={product}
+                    showNotification={showNotification}
+                  />
                 ))}
               </>
             </div>
           </div>
         </div>
       </section>
+      <SlideCart abierto={true} />
     </>
   );
 }

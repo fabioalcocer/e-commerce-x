@@ -11,8 +11,8 @@ function SlideCart({ abierto }) {
   const [total, setTotal] = useState(reduce);
 
   useEffect(() => {
-    if (total === 0) {
-      console.log(`el total es 0`);
+    if (total === 1000) {
+      console.log(`deja de comprar bro`);
     }
   }, [total]);
 

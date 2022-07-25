@@ -4,20 +4,33 @@ import Details from "./components/Details";
 import CardsContainer from "./components/CardsContainer";
 import Filters from "./components/Filters";
 import Footer from "./components/Footer";
+import AppContext from "./Context";
+import { productsCart as products, productsCart } from "./components/Card";
+import { useState } from "react";
 
 function App() {
+  const [count, setCount] = useState(0);
+
+  const handleCount = () => {
+    setCount(products.length + 1)
+  }
+
   return (
     <div className="App transition-colors: bg-slate-50 duration-500 dark:bg-gray-900">
-      <main className="container mx-auto flex flex-col p-4 pt-0">
-        <section className="container mx-auto max-w-7xl pr-1 md:pr-2">
-          <Header />
-          <Details />
-          <Tags />
-          <Filters />
-        </section>
-        <CardsContainer />
-        <Footer />
-      </main>
+      
+      <AppContext.Provider value={{count, handleCount}}>
+        <main className="container mx-auto flex flex-col p-4 pt-0">
+          <section className="container mx-auto max-w-7xl pr-1 md:pr-2">
+            <Header />
+            <Details />
+            <Tags />
+            <Filters />
+          </section>
+          <CardsContainer />
+          <Footer />
+        </main>
+      </AppContext.Provider>
+      
     </div>
   );
 }

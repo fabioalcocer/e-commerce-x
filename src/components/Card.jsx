@@ -1,10 +1,13 @@
 import RadioButtons from "./RadioButtons";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+import AppContext from "../Context.jsx";
 
 export const productsCart = [];
 
 function Card({product, showNotification}) {
   const refBg = useRef(null);
+
+  const { handleCount } = useContext(AppContext)
 
   return (
     <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm dark:shadow-slate-800">
@@ -25,6 +28,7 @@ function Card({product, showNotification}) {
 
       <button
         onClick={() => {
+          handleCount(),
           showNotification(),
           productsCart.push(product);
           console.log(productsCart);
