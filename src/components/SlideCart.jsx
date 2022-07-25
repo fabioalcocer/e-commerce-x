@@ -49,7 +49,7 @@ function SlideCart({ abierto }) {
                       <div className="flex items-start justify-between">
                         <Dialog.Title className="text-lg font-medium text-gray-900">
                           {" "}
-                          Shopping cart{" "}
+                          Carrito de compras{" "}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <BiXCircle
@@ -105,7 +105,7 @@ function SlideCart({ abierto }) {
                                         type="button"
                                         className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
                                       >
-                                        Remove
+                                        Eliminar
                                       </button>
                                     </div>
                                   </div>

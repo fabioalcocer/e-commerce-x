@@ -6,7 +6,7 @@ function Notification({ refNoti }) {
       ref={refNoti}
       className="invisible fixed bottom-16 left-0 right-0 z-10 mx-auto flex w-11/12 max-w-sm animate-bounce overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
     >
-      <div className="flex w-12 items-center justify-center bg-emerald-500">
+      <div className="flex w-14 items-center justify-center bg-emerald-500">
         <svg
           className="h-6 w-6 fill-current text-white"
           viewBox="0 0 40 40"
@@ -16,13 +16,13 @@ function Notification({ refNoti }) {
         </svg>
       </div>
 
-      <div className="-mx-3 px-4 py-2">
-        <div className="mx-3">
+      <div className="-mx-3 p-3">
+        <div className="flex flex-col gap-1 mx-3">
           <span className="font-semibold text-emerald-500 dark:text-emerald-400">
-            Success
+            Realizado
           </span>
           <p className="text-sm text-gray-600 dark:text-gray-200">
-            Your account was registered!
+            Tu producto ha sido agregado exitosamente!
           </p>
         </div>
       </div>
