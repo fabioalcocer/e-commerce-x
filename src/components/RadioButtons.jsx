@@ -6,7 +6,6 @@ function RadioButtons({ refImg }) {
   const arraysImages = [black, red, gray];
 
   const handleColors = (e) => {
-    console.log(e.target.value);
 
     arraysImages.map((i) => {
       if (i.indexOf(e.target.value) !== -1) {
