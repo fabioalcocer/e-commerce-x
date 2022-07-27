@@ -1,11 +1,11 @@
 import { AppContext } from "../Context.jsx";
 import { useState, useContext } from "react";
-import { BiSearch, BiCart, BiMoon } from "react-icons/bi";
+import { BiSearch, BiCart, BiMoon, BiSun } from "react-icons/bi";
 
 function Search() {
   const { count, openSlide } = useContext(AppContext);
-
   const [search, setSearch] = useState("");
+  const [theme, setTheme] = useState(true);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -13,7 +13,14 @@ function Search() {
   };
 
   const onDarkMode = () => {
-    document.documentElement.classList.toggle("dark");
+    document.querySelector("body").classList.toggle("dark");
+  };
+
+  const handleThemeIcon = () => {
+    if (theme) {
+      return setTheme(false);
+    }
+    return setTheme(true);
   };
 
   return (
@@ -29,17 +36,27 @@ function Search() {
           name="search"
           placeholder="Buscar"
         />
-        <BiMoon
-          onClick={onDarkMode}
-          className="transition-colors: cursor-pointer text-3xl text-slate-600 duration-300 hover:text-black dark:text-slate-200  dark:hover:text-white"
-        />
-        <BiCart
-          onClick={openSlide}
-          className="transition-colors: cursor-pointer text-4xl duration-300 hover:text-amber-500"
-        />
-        <p className="absolute right-0 -mt-5 -mr-2 h-5 w-5 rounded-[50%] bg-red-500 text-center text-sm font-bold text-white ">
-          {count}
-        </p>
+        <div
+          className="text-3xl"
+          onClick={() => {
+            onDarkMode(), handleThemeIcon();
+          }}
+        >
+          {theme ? (
+            <BiSun className="transition-colors: cursor-pointer text-2xl text-slate-600 duration-300 hover:text-black dark:text-slate-200 dark:hover:text-white  lg:text-3xl" />
+          ) : (
+            <BiMoon className="transition-colors: cursor-pointer text-2xl text-slate-600 duration-300 hover:text-black dark:text-slate-200 dark:hover:text-white  lg:text-3xl" />
+          )}
+        </div>
+        <div>
+          <BiCart
+            onClick={openSlide}
+            className="transition-colors: cursor-pointer text-3xl  duration-300 hover:text-amber-500 lg:text-4xl"
+          />
+          <p className="absolute right-0 -mt-9 -mr-2 h-5 w-5 rounded-[50%] bg-red-500 text-center text-sm font-bold text-white ">
+            {count}
+          </p>
+        </div>
       </div>
     </>
   );

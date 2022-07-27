@@ -1,14 +1,46 @@
-import { Fragment, useContext } from "react";
+import { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
-import { BiXCircle } from "react-icons/bi";
-
+import { BiXCircle, BiChevronLeft } from "react-icons/bi";
+import { BsWhatsapp } from "react-icons/bs";
 import { AppContext, ProductContext } from "../Context.jsx";
+import Payment from "./Payment.jsx";
 
 function SlideCart() {
   const { openS, setOpen, handleCount } = useContext(AppContext);
   const { products, setProducts } = useContext(ProductContext);
+  const [show, setShow] = useState(true);
+
+  const obj = [
+    {
+      id: 1,
+      name: "Camiseta Puma",
+      colors: ["red", "gray", "black", "blue "],
+      price: 180,
+      quantity: 1,
+      imageSrc:
+        "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
+    },
+    {
+      id: 2,
+      name: "Sudadera Nike",
+      colors: ["red", "gray", "black", "blue "],
+      price: 100,
+      quantity: 1,
+      imageSrc:
+        "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
+    },
+  ];
+
+  const string = JSON.stringify(obj);
 
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
+
+  const handleShowSection = () => {
+    if (show) {
+      return setShow(false);
+    }
+    return setShow(true);
+  };
 
   return (
     <Transition.Root show={openS} as={Fragment}>
@@ -40,73 +72,86 @@ function SlideCart() {
                 <Dialog.Panel className="pointer-events-auto w-screen max-w-md">
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl dark:bg-gray-900">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
-                      <div className="flex items-start justify-between">
-                        <Dialog.Title className="text-lg font-medium text-gray-900">
+                      <div className="flex items-center justify-start">
+                        {show ? (
+                          ""
+                        ) : (
+                          <BiChevronLeft
+                            className="mr-3 text-4xl text-slate-400 hover:text-slate-50"
+                            onClick={() => setShow(true)}
+                          />
+                        )}
+
+                        <Dialog.Title className="mr-auto text-xl font-medium text-gray-900 dark:text-slate-50">
                           {" "}
                           Carrito de compras{" "}
                         </Dialog.Title>
                         <div className="ml-3 flex h-7 items-center">
                           <BiXCircle
-                            className="text-3xl text-slate-500"
+                            className="text-3xl text-slate-400"
                             onClick={() => setOpen(false)}
                           />
                         </div>
                       </div>
 
-                      <div className="mt-8">
-                        <div className="flow-root">
-                          <ul
-                            role="list"
-                            className="-my-6 divide-y divide-slate-300 dark:divide-slate-600"
-                          >
-                            {products.map((product) => (
-                              <li key={product.id} className="flex py-6">
-                                <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600">
-                                  <img
-                                    src={product.imageSrc}
-                                    alt={product.imageAlt}
-                                    className="h-full w-full object-cover object-center"
-                                  />
-                                </div>
-
-                                <div className="ml-4 flex flex-1 flex-col">
-                                  <div>
-                                    <div className="flex justify-between text-lg font-semibold text-gray-900 dark:text-slate-200">
-                                      <h3>{product.name}</h3>
-                                      <p className="ml-4 font-semibold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
-                                    </div>
-                                    <p className="mt-1 text-base capitalize text-gray-500 dark:text-gray-300">
-                                      {product.colors[0]}
-                                    </p>
+                      {show ? (
+                        <div className="mt-8">
+                          <div className="flow-root">
+                            <ul
+                              role="list"
+                              className="-my-6 divide-y divide-slate-300 dark:divide-slate-600"
+                            >
+                              {products.map((product) => (
+                                <li key={product.id} className="flex py-6">
+                                  <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600">
+                                    <img
+                                      src={product.imageSrc}
+                                      alt={product.imageAlt}
+                                      className="h-full w-full object-cover object-center"
+                                    />
                                   </div>
-                                  <div className="flex flex-1 items-end justify-between">
-                                    <p className="text-sm text-gray-500 dark:text-gray-200 md:text-base">
-                                      Cantidad: {product.quantity}
-                                    </p>
 
-                                    <div className="flex">
-                                      <button
-                                        onClick={() => {
-                                          (reduce) => reduce - product.price,
-                                            setProducts(
-                                              products.filter(
-                                                (x) => x.id !== product.id
-                                              )
-                                            )
-                                        }}
-                                        type="button"
-                                        className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
-                                      >
-                                        Eliminar
-                                      </button>
+                                  <div className="ml-4 flex flex-1 flex-col">
+                                    <div>
+                                      <div className="flex justify-between text-lg font-semibold text-gray-900 dark:text-slate-200">
+                                        <h3>{product.name}</h3>
+                                        <p className="ml-4 font-semibold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
+                                      </div>
+                                      <p className="mt-1 text-base capitalize text-gray-500 dark:text-gray-300">
+                                        {product.colors[0]}
+                                      </p>
+                                    </div>
+                                    <div className="flex flex-1 items-end justify-between">
+                                      <p className="text-sm text-gray-500 dark:text-gray-200 md:text-base">
+                                        Cantidad: {product.quantity}
+                                      </p>
+
+                                      <div className="flex">
+                                        <button
+                                          onClick={() => {
+                                            (reduce) => reduce - product.price,
+                                              setProducts(
+                                                products.filter(
+                                                  (x) => x.id !== product.id
+                                                )
+                                              );
+                                          }}
+                                          type="button"
+                                          className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
+                                        >
+                                          Eliminar
+                                        </button>
+                                      </div>
                                     </div>
                                   </div>
-                                </div>
-                              </li>
-                            ))}
-                          </ul>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
                         </div>
-                      </div>
+                      ) : (
+                        <Payment />
+                      )}
                     </div>
 
                     <div className="border-t border-slate-700 py-6 px-4 sm:px-6">
@@ -117,17 +162,31 @@ function SlideCart() {
                       <p className="mt-0.5 text-base text-gray-500 dark:text-gray-300">
                         Monto total a pagar
                       </p>
-                      <div className="mt-6">
-                        <a
-                          onClick={() => {
-                            console.log("whatsapp");
-                          }}
-                          href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
-                        >
-                          Completar pago
-                        </a>
-                      </div>
+
+                      {show ? (
+                        <div className="mt-6">
+                          <div
+                            onClick={handleShowSection}
+                            className="flex cursor-pointer items-center justify-center rounded-md border border-transparent bg-indigo-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-indigo-700"
+                          >
+                            Completar pago
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="mt-6">
+                          <a
+                            onClick={() => console.log("todo bn")}
+                            href={`https://wa.me/59170767393?text=${encodeURIComponent(
+                              string
+                            )}`}
+                            className="transition-colors: flex items-center justify-center gap-1 rounded-md border border-transparent bg-emerald-500 px-6 py-3 text-base font-semibold text-white shadow-sm duration-300 hover:bg-emerald-700"
+                          >
+                            <BsWhatsapp className="text-xl" />
+                            Whatsapp
+                          </a>
+                        </div>
+                      )}
+
                       <div className="mt-6 flex justify-center text-center text-gray-500 dark:text-gray-300">
                         <button
                           type="button"
