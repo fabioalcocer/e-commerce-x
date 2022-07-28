@@ -9,7 +9,7 @@ function Card({ product, showNotification }) {
   const { products, setProducts } = useContext(ProductContext);
 
   return (
-    <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-sm dark:shadow-slate-800">
+    <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-inner dark:shadow-slate-800">
       <img
         ref={refBg}
         className="h-80 w-full rounded-md object-cover xl:h-96"
