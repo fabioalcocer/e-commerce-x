@@ -24,7 +24,7 @@ export const data = [
     price: 150,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
   },
   {
     id: 4,
@@ -42,7 +42,7 @@ export const data = [
     price: 180,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1659041231/e-commerce-x/madrid_pehnxn.webp",
   },
   {
     id: 6,
@@ -78,7 +78,7 @@ export const data = [
     price: 180,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
   },
   {
     id: 10,
@@ -96,7 +96,7 @@ export const data = [
     price: 150,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657676381/e-commerce-x/blue_dktsgj.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
   },
   {
     id: 12,
