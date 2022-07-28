@@ -6,34 +6,15 @@ import { AppContext, ProductContext } from "../Context.jsx";
 import Payment from "./Payment.jsx";
 
 function SlideCart() {
-  const { openS, setOpen, handleCount } = useContext(AppContext);
-  const { products, setProducts } = useContext(ProductContext);
+  const { openS, setOpen } = useContext(AppContext);
+  const { products, setProducts, method } = useContext(ProductContext);
   const [show, setShow] = useState(true);
 
-  const obj = [
-    {
-      id: 1,
-      name: "Camiseta Puma",
-      colors: ["red", "gray", "black", "blue "],
-      price: 180,
-      quantity: 1,
-      imageSrc:
-        "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
-    },
-    {
-      id: 2,
-      name: "Sudadera Nike",
-      colors: ["red", "gray", "black", "blue "],
-      price: 100,
-      quantity: 1,
-      imageSrc:
-        "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
-    },
-  ];
-
-  const string = JSON.stringify(obj);
-
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
+
+  const string = `Hola! Quisiera comprar los siguientes productos:\n${products.map(
+    (product) => `· ${product.name} - ${product.price}Bs.\n`
+  )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {
     if (show) {
@@ -175,7 +156,7 @@ function SlideCart() {
                       ) : (
                         <div className="mt-6">
                           <a
-                            onClick={() => console.log("todo bn")}
+                            target="_blank"
                             href={`https://wa.me/59170767393?text=${encodeURIComponent(
                               string
                             )}`}

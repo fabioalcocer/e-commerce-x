@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
 import { data } from "../services/data";
+import Card from "./Card";
 import Notification from "./Notification";
 import SlideCart from "./SlideCart";
-import Card from "./Card";
 import { ProductContext } from "../Context";
 
 function CardsContainer() {
   const [products, setProducts] = useState([]);
+  const [method, setMethod] = useState("Efectivo");
 
   const refNotification = useRef(null);
 
@@ -20,7 +21,9 @@ function CardsContainer() {
 
   return (
     <>
-      <ProductContext.Provider value={{ products, setProducts }}>
+      <ProductContext.Provider
+        value={{ products, setProducts, method, setMethod }}
+      >
         <Notification refNoti={refNotification} />
         <section className="container mx-auto pb-5">
           <div className="lg:-mx-2 lg:flex">
