@@ -12,9 +12,10 @@ function SlideCart() {
 
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
 
-  const string = `Hola! Quisiera comprar los siguientes productos:\n${products.map(
-    (product) => `· ${product.name} - ${product.price}Bs.\n`
-  )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
+  const string =
+    `Hola! Quisiera comprar los siguientes productos:\n${products.map(
+      (product) => `· ${product.name} - ${product.price}Bs.\n`
+    )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {
     if (show) {
@@ -58,7 +59,7 @@ function SlideCart() {
                           ""
                         ) : (
                           <BiChevronLeft
-                            className="mr-3 text-4xl text-slate-400 hover:text-slate-50"
+                            className="mr-3 text-4xl text-slate-400 hover:text-slate-900 dark:hover:text-slate-50"
                             onClick={() => setShow(true)}
                           />
                         )}

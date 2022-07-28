@@ -15,7 +15,7 @@ function Payment() {
       </h4>
       <div className="flex flex-col gap-3 text-gray-900 dark:text-slate-200">
         <label onChange={handleMethod} className="flex items-center gap-2">
-          <input value="Efectivo" type="radio" name="method" defaultChecked />
+          <input value="Efectivo" type="radio" name="method" />
           <span>Efectivo</span>
         </label>
         <label onChange={handleMethod} className="flex items-center gap-2">
