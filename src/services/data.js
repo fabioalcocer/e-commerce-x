@@ -107,4 +107,22 @@ export const data = [
     imageSrc:
       "https://res.cloudinary.com/daobmfotr/image/upload/v1659041231/e-commerce-x/madrid_pehnxn.webp",
   },
+  {
+    id: 13,
+    name: "Camiseta Real Madrid",
+    colors: ["red", "gray", "black", "blue "],
+    price: 160,
+    quantity: 1,
+    imageSrc:
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
+  },
+  {
+    id: 14,
+    name: "Short Nike",
+    colors: ["red", "gray", "black", "blue "],
+    price: 160,
+    quantity: 1,
+    imageSrc:
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1659041231/e-commerce-x/madrid_pehnxn.webp",
+  },
 ];

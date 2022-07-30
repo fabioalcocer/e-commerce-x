@@ -1,5 +1,6 @@
 import { Menu, Transition } from "@headlessui/react";
 import { BiFilterAlt } from "react-icons/bi";
+import { data } from "../services/data";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -10,7 +11,7 @@ function Filters() {
     <div className="mt-8 flex items-center justify-between gap-4">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button className="text-md inline-flex items-center justify-center rounded-3xl border-2 border-black bg-white px-4 py-1.5 font-bold text-slate-900 shadow-sm hover:bg-gray-50 focus:outline-none dark:bg-slate-900 dark:text-white dark:border-white">
+          <Menu.Button className="text-md inline-flex items-center justify-center rounded-3xl border-2 border-black bg-white px-4 py-1.5 font-bold text-slate-900 shadow-sm hover:bg-gray-50 focus:outline-none dark:border-white dark:bg-slate-900 dark:text-white">
             <BiFilterAlt className="mr-1 text-2xl font-bold" />
             Filtros
           </Menu.Button>
@@ -68,7 +69,9 @@ function Filters() {
           </Menu.Items>
         </Transition>
       </Menu>
-      <span className="font-medium text-gray-500 dark:text-slate-200">268 Articulos</span>
+      <span className="font-medium text-gray-500 dark:text-slate-200">
+        {data.length} Articulos
+      </span>
     </div>
   );
 }
