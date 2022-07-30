@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ProductContext } from "../Context";
 
 function Tags() {
   const [active, setActive] = useState(false);
+  const { dataProducts, filterProducts  } = useContext(ProductContext);
 
   const tags = [
     { id: 1, text: "Todo" },
@@ -12,14 +14,17 @@ function Tags() {
     { id: 6, text: "Tennis" },
   ];
 
+
+
   return (
     <div className="mt-4">
-      <ul className="p-1 pl-[2px] text-md flex overflow-x-auto text-center font-medium first-letter:text-gray-100">
+      <ul className="text-md flex overflow-x-auto p-1 pl-[2px] text-center font-medium first-letter:text-gray-100">
         {tags.map((tag) => (
           <li
             key={tag.id}
             onClick={(e) => {
-              setActive(tag.id), console.log(e.target.innerText);
+              setActive(tag.id),
+              filterProducts(e)
             }}
             className={`tag mr-2 inline-block rounded-3xl bg-gray-800 py-2 px-3 text-white ${
               active === tag.id

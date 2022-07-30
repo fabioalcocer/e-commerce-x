@@ -1,8 +1,6 @@
 import Header from "./components/Header";
-import Tags from "./components/Tags";
 import Details from "./components/Details";
 import CardsContainer from "./components/CardsContainer";
-import Filters from "./components/Filters";
 import Footer from "./components/Footer";
 import { AppContext } from "./Context";
 import { useState } from "react";
@@ -28,8 +26,6 @@ function App() {
           <section className="container mx-auto max-w-7xl pr-1 md:pr-2">
             <Header />
             <Details />
-            <Tags />
-            <Filters />
           </section>
           <CardsContainer />
           <Footer />

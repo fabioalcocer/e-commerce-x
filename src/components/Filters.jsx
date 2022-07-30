@@ -8,7 +8,7 @@ function classNames(...classes) {
 
 function Filters() {
   return (
-    <div className="mt-8 flex items-center justify-between gap-4">
+    <div className="mt-8 pl-[2px] flex items-center justify-between gap-4">
       <Menu as="div" className="relative inline-block text-left">
         <div>
           <Menu.Button className="text-md inline-flex items-center justify-center rounded-3xl border-2 border-black bg-white px-4 py-1.5 font-bold text-slate-900 shadow-sm hover:bg-gray-50 focus:outline-none dark:border-white dark:bg-slate-900 dark:text-white">

@@ -31,7 +31,9 @@ function Card({ product, showNotification }) {
             showNotification(),
             setProducts([...products, product]);
         }}
-        className="mt-4 flex w-full transform items-center justify-center rounded-md bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700"
+        className="mt-4 flex w-full transform items-center justify-center rounded-md 
+        bg-gray-800 px-2 py-2 font-medium capitalize tracking-wide text-white transition-colors duration-200 
+        hover:bg-indigo-500 focus:bg-indigo-700 focus:outline-none dark:bg-slate-600 dark:hover:bg-indigo-500 dark:focus:bg-indigo-700"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
