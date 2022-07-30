@@ -1,6 +1,6 @@
 function Details() {
   return (
-    <section className="details pr-2">
+    <section className="details pr-2 pl-[2px]">
       <div className="flex items-center justify-between">
         <h1 className="mt-9 text-[1.7rem] text-slate-900 dark:text-gray-200">
           El Chiringuito

@@ -14,7 +14,7 @@ function Tags() {
 
   return (
     <div className="mt-4">
-      <ul className="text-md flex overflow-x-auto text-center font-medium first-letter:text-gray-100">
+      <ul className="p-1 pl-[2px] text-md flex overflow-x-auto text-center font-medium first-letter:text-gray-100">
         {tags.map((tag) => (
           <li
             key={tag.id}
@@ -23,7 +23,7 @@ function Tags() {
             }}
             className={`tag mr-2 inline-block rounded-3xl bg-gray-800 py-2 px-3 text-white ${
               active === tag.id
-                ? "bg-slate-900 text-white"
+                ? "bg-slate-900 text-white  dark:outline dark:outline-2 dark:outline-slate-50"
                 : "bg-gray-100 text-black"
             } cursor-pointer`}
           >
