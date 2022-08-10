@@ -17,10 +17,7 @@ function Search() {
   };
 
   const handleThemeIcon = () => {
-    if (theme) {
-      return setTheme(false);
-    }
-    return setTheme(true);
+    theme ? setTheme(false) : setTheme(true);
   };
 
   return (

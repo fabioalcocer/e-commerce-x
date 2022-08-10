@@ -29,7 +29,7 @@ function Tags() {
             className={`tag mr-2 inline-block rounded-3xl bg-gray-800 py-2 px-3 text-white ${
               active === tag.id
                 ? "bg-slate-900 text-white  dark:outline dark:outline-2 dark:outline-slate-50"
-                : "bg-gray-200 bg-opacity-70 text-black"
+                : "dark:bg-gray-100 bg-gray-200 bg-opacity-70 text-black"
             } cursor-pointer`}
           >
             {tag.text}
