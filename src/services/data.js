@@ -1,13 +1,13 @@
 export const data = [
   {
     id: 1,
-    name: "Camiseta Puma",
+    name: "Hoodie Anime",
     sizes: ["S", "M", "L", "XL"],
-    category: "",
+    category: "Sudaderas",
     price: 180,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1660249137/e-commerce-x/hoddie_anime_swzi9p.webp",
   },
   {
     id: 2,
@@ -17,17 +17,17 @@ export const data = [
     price: 100,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1659041231/e-commerce-x/madrid_pehnxn.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1660249137/e-commerce-x/hoddie_anime_swzi9p.webp",
   },
   {
     id: 3,
-    name: "Pantalón Negro",
+    name: "Hoodie Anime",
     sizes: ["S", "M", "L", "XL"],
-    category: "Pantalones",
+    category: "Sudaderas",
     price: 150,
     quantity: 1,
     imageSrc:
-      "https://res.cloudinary.com/daobmfotr/image/upload/v1657863864/e-commerce-x/argentina_iltkio.webp",
+      "https://res.cloudinary.com/daobmfotr/image/upload/v1660249137/e-commerce-x/hoddie_anime_swzi9p.webp",
   },
   {
     id: 4,

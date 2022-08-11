@@ -4,7 +4,7 @@ import { AppContext, ProductContext } from "../Context.jsx";
 
 function Card({ product, showNotification }) {
   const { handleCount } = useContext(AppContext);
-  const { products, setProducts } = useContext(ProductContext);
+  const { products, setProducts, size } = useContext(ProductContext);
 
   return (
     <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-inner dark:shadow-slate-800">
@@ -24,6 +24,8 @@ function Card({ product, showNotification }) {
 
       <button
         onClick={() => {
+          product.currentSize = size;
+          console.log(product);
           handleCount(products),
             showNotification(),
             setProducts([...products, product]);

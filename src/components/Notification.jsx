@@ -4,7 +4,7 @@ function Notification({ refNoti }) {
   return (
     <div
       ref={refNoti}
-      className="invisible fixed bottom-16 left-0 right-0 z-10 mx-auto flex w-11/12 max-w-sm animate-bounce overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
+      className="invisible fixed bottom-16 left-0 right-0 z-10 mx-auto flex w-11/12 max-w-sm animate-bounce-slow overflow-hidden rounded-lg bg-white shadow-md dark:bg-gray-800"
     >
       <div className="flex w-14 items-center justify-center bg-emerald-500">
         <svg

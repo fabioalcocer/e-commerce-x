@@ -8,14 +8,14 @@ import ProductsCart from "./ProductsCart.jsx";
 
 function SlideCart() {
   const { openS, setOpen } = useContext(AppContext);
-  const { products, setProducts, method, size } = useContext(ProductContext);
+  const { products, method } = useContext(ProductContext);
   const [show, setShow] = useState(true);
 
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
 
   const string =
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(
-      (product) => `· ${product.name} Talla ${size} - ${product.price}Bs.\n`
+      (product) => `· ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
     )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {

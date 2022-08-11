@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { ProductContext } from "../Context.jsx";
 
 function ProductsCart({products}) {
-  const { setProducts, size } = useContext(ProductContext);
+  const { setProducts } = useContext(ProductContext);
   
   return (
     <div className="mt-8">
@@ -28,7 +28,7 @@ function ProductsCart({products}) {
                     <p className="ml-4 font-semibold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
                   </div>
                   <p className="mt-2 text-base capitalize text-gray-500 dark:text-gray-300">
-                    Talla: {size}
+                    Talla: {product.currentSize}
                   </p>
                 </div>
                 <div className="flex flex-1 items-end justify-between">
