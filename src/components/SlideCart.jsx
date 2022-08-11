@@ -4,17 +4,18 @@ import { BiXCircle, BiChevronLeft } from "react-icons/bi";
 import { BsWhatsapp } from "react-icons/bs";
 import { AppContext, ProductContext } from "../Context.jsx";
 import Payment from "./Payment.jsx";
+import ProductsCart from "./ProductsCart.jsx";
 
 function SlideCart() {
   const { openS, setOpen } = useContext(AppContext);
-  const { products, setProducts, method } = useContext(ProductContext);
+  const { products, setProducts, method, size } = useContext(ProductContext);
   const [show, setShow] = useState(true);
 
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
 
   const string =
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(
-      (product) => `· ${product.name} - ${product.price}Bs.\n`
+      (product) => `· ${product.name} Talla ${size} - ${product.price}Bs.\n`
     )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {
@@ -77,60 +78,7 @@ function SlideCart() {
                       </div>
 
                       {show ? (
-                        <div className="mt-8">
-                          <div className="flow-root">
-                            <ul
-                              role="list"
-                              className="-my-6 divide-y divide-slate-300 dark:divide-slate-600"
-                            >
-                              {products.map((product) => (
-                                <li key={product.id} className="flex py-6">
-                                  <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600">
-                                    <img
-                                      src={product.imageSrc}
-                                      alt={product.imageAlt}
-                                      className="h-full w-full object-cover object-center"
-                                    />
-                                  </div>
-
-                                  <div className="ml-4 flex flex-1 flex-col">
-                                    <div>
-                                      <div className="flex justify-between text-lg font-semibold text-gray-900 dark:text-slate-200">
-                                        <h3>{product.name}</h3>
-                                        <p className="ml-4 font-semibold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
-                                      </div>
-                                      <p className="mt-1 text-base capitalize text-gray-500 dark:text-gray-300">
-                                        {product.colors[0]}
-                                      </p>
-                                    </div>
-                                    <div className="flex flex-1 items-end justify-between">
-                                      <p className="text-sm text-gray-500 dark:text-gray-200 md:text-base">
-                                        Cantidad: {product.quantity}
-                                      </p>
-
-                                      <div className="flex">
-                                        <button
-                                          onClick={() => {
-                                            (reduce) => reduce - product.price,
-                                              setProducts(
-                                                products.filter(
-                                                  (x) => x.id !== product.id
-                                                )
-                                              );
-                                          }}
-                                          type="button"
-                                          className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
-                                        >
-                                          Eliminar
-                                        </button>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
+                        <ProductsCart products={products}/>
                       ) : (
                         <Payment />
                       )}

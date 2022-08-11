@@ -11,6 +11,7 @@ function CardsContainer() {
   const [dataProducts, setDataProducts] = useState([...data]);
   const [products, setProducts] = useState([]);
   const [method, setMethod] = useState("Efectivo");
+  const [size, setSize] = useState("");
 
   const refNotification = useRef(null);
 
@@ -44,6 +45,8 @@ function CardsContainer() {
           setProducts,
           method,
           setMethod,
+          size,
+          setSize,
           dataProducts,
           filterProducts,
         }}

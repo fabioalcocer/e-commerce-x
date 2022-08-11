@@ -2,7 +2,7 @@ export const data = [
   {
     id: 1,
     name: "Camiseta Puma",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "",
     price: 180,
     quantity: 1,
@@ -12,7 +12,7 @@ export const data = [
   {
     id: 2,
     name: "Sudadera Nike",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Sudaderas",
     price: 100,
     quantity: 1,
@@ -22,7 +22,7 @@ export const data = [
   {
     id: 3,
     name: "Pantalón Negro",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Pantalones",
     price: 150,
     quantity: 1,
@@ -33,7 +33,7 @@ export const data = [
     id: 4,
     name: "Short Adidas",
     price: 160,
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Shorts",
     quantity: 1,
     imageSrc:
@@ -42,7 +42,7 @@ export const data = [
   {
     id: 5,
     name: "Camiseta Puma",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Camisetas",
     price: 180,
     quantity: 1,
@@ -52,7 +52,7 @@ export const data = [
   {
     id: 6,
     name: "Sudadera Nike",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Sudaderas",
     price: 100,
     quantity: 1,
@@ -62,7 +62,7 @@ export const data = [
   {
     id: 7,
     name: "Pantalón Azul",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Pantalones",
     price: 150,
     quantity: 1,
@@ -72,7 +72,7 @@ export const data = [
   {
     id: 8,
     name: "Short Adidas",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Shorts",
     price: 160,
     quantity: 1,
@@ -82,7 +82,7 @@ export const data = [
   {
     id: 9,
     name: "Camiseta Puma",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Camisetas",
     price: 180,
     quantity: 1,
@@ -92,7 +92,7 @@ export const data = [
   {
     id: 10,
     name: "Sudadera Nike",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Sudaderas",
     price: 100,
     quantity: 1,
@@ -102,7 +102,7 @@ export const data = [
   {
     id: 11,
     name: "Tennis Nike",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Tennis",
     price: 150,
     quantity: 1,
@@ -112,7 +112,7 @@ export const data = [
   {
     id: 12,
     name: "Short Adidas",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Shorts",
     price: 160,
     quantity: 1,
@@ -122,7 +122,7 @@ export const data = [
   {
     id: 13,
     name: "Camiseta Real Madrid",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Camisetas",
     price: 160,
     quantity: 1,
@@ -132,7 +132,7 @@ export const data = [
   {
     id: 14,
     name: "Short Nike",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Shorts",
     price: 160,
     quantity: 1,
@@ -142,7 +142,7 @@ export const data = [
   {
     id: 15,
     name: "Tennis Puma",
-    colors: ["red", "gray", "black", "blue "],
+    sizes: ["S", "M", "L", "XL"],
     category: "Tennis",
     price: 160,
     quantity: 1,

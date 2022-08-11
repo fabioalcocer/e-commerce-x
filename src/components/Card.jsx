@@ -1,17 +1,14 @@
-import RadioButtons from "./RadioButtons";
-import { useRef, useContext } from "react";
+import Sizes from "./Sizes";
+import { useContext } from "react";
 import { AppContext, ProductContext } from "../Context.jsx";
 
 function Card({ product, showNotification }) {
-  const refBg = useRef(null);
-
   const { handleCount } = useContext(AppContext);
   const { products, setProducts } = useContext(ProductContext);
 
   return (
     <article className="mx-auto flex w-full max-w-[300px] flex-col justify-center gap-1 rounded-lg p-4 shadow-inner dark:shadow-slate-800">
       <img
-        ref={refBg}
         className="h-80 w-full rounded-md object-cover xl:h-96"
         src={product.imageSrc}
         alt="T-Shirt"
@@ -23,7 +20,7 @@ function Card({ product, showNotification }) {
         <p className="font-bold text-emerald-600 dark:text-emerald-500">{`$${product.price}`}</p>
       </div>
 
-      <RadioButtons refImg={refBg} />
+      <Sizes {...product} />
 
       <button
         onClick={() => {
