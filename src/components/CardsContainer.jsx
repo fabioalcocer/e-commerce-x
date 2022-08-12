@@ -1,5 +1,4 @@
-import { useRef, useState } from "react";
-import { data } from "../services/data";
+import { useEffect, useRef, useState } from "react";
 import Card from "./Card";
 import Notification from "./Notification";
 import SlideCart from "./SlideCart";
@@ -7,8 +6,17 @@ import { ProductContext } from "../Context";
 import Tags from "./Tags";
 import Filters from "./Filters";
 
+import { getDataProducts } from "../services/data";
+
 function CardsContainer() {
-  const [dataProducts, setDataProducts] = useState([...data]);
+  const [dataProducts, setDataProducts] = useState([]);
+
+  useEffect(() => {
+    getDataProducts()
+      .then(setDataProducts)
+      .catch((err) => console.log(err));
+  }, []);
+
   const [products, setProducts] = useState([]);
   const [method, setMethod] = useState("Efectivo");
   const [size, setSize] = useState("");
@@ -24,17 +32,18 @@ function CardsContainer() {
   };
 
   const filterProducts = (e) => {
-    setDataProducts([...data]);
+    setDataProducts(dataProducts);
 
-    if(e.target.innerText === "Todo") {
-      return; 
+    if (e.target.innerText === "Todo") {
+      console.log(dataProducts.data);
+      return;
     }
 
-    setDataProducts((dataProducts) =>
-      dataProducts.filter(
-        (products) => products.category === e.target.innerText
-      )
+    const filterArray = dataProducts.data?.filter(
+      (products) => products.category === e.target.innerText
     );
+
+    setDataProducts(filterArray);
   };
 
   return (
@@ -61,7 +70,7 @@ function CardsContainer() {
             <div className="lg:w-5/5 mx-auto mt-6 lg:mt-0 lg:px-2 ">
               <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 <>
-                  {dataProducts.map((product) => (
+                  {dataProducts.data?.map((product) => (
                     <Card
                       key={product.id}
                       product={product}

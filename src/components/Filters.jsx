@@ -1,6 +1,5 @@
 import { Menu, Transition } from "@headlessui/react";
 import { BiFilterAlt } from "react-icons/bi";
-import { data } from "../services/data";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -70,7 +69,7 @@ function Filters() {
         </Transition>
       </Menu>
       <span className="font-medium text-gray-500 dark:text-slate-200">
-        {data.length} Articulos
+        {/* {data.length} Articulos */}
       </span>
     </div>
   );

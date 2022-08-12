@@ -19,10 +19,7 @@ function SlideCart() {
     )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {
-    if (show) {
-      return setShow(false);
-    }
-    return setShow(true);
+    show ? setShow(false) : setShow(true);
   };
 
   return (

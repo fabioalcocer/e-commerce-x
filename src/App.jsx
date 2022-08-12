@@ -18,7 +18,7 @@ function App() {
   };
 
   return (
-    <div className="App transition-colors: bg-slate-50 duration-500 dark:bg-gray-900">
+    <div className="App min-h-screen transition-colors: bg-slate-50 duration-500 dark:bg-gray-900">
       <AppContext.Provider
         value={{ count, handleCount, openS, setOpen, openSlide }}
       >
