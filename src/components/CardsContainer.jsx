@@ -7,13 +7,16 @@ import Tags from "./Tags";
 import Filters from "./Filters";
 
 import { getDataProducts } from "../services/data";
+import Loading from "./Loading";
 
 function CardsContainer() {
   const [dataProducts, setDataProducts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getDataProducts()
       .then(setDataProducts)
+      .then(() => setIsLoading(false))
       .catch((err) => console.log(err));
   }, []);
 
@@ -32,7 +35,7 @@ function CardsContainer() {
   };
 
   const filterProducts = (e) => {
-    setDataProducts(dataProducts) //esto debe setear los productos al estado inicial
+    setDataProducts(dataProducts); //esto debe setear los productos al estado inicial
 
     if (e.target.innerText === "Todo") {
       return;
@@ -67,17 +70,21 @@ function CardsContainer() {
         <section className="container mx-auto pb-5">
           <div className="lg:-mx-2 lg:flex">
             <div className="lg:w-5/5 mx-auto mt-6 lg:mt-0 lg:px-2 ">
-              <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                <>
-                  {dataProducts.map((product) => (
-                    <Card
-                      key={product.id}
-                      product={product}
-                      showNotification={showNotification}
-                    />
-                  ))}
-                </>
-              </div>
+              {isLoading ? (
+                <Loading />
+              ) : (
+                <div className="mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+                  <>
+                    {dataProducts.map((product) => (
+                      <Card
+                        key={product.id}
+                        product={product}
+                        showNotification={showNotification}
+                      />
+                    ))}
+                  </>
+                </div>
+              )}
             </div>
           </div>
         </section>
