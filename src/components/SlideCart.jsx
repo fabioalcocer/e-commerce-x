@@ -15,7 +15,8 @@ function SlideCart() {
 
   const string =
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(
-      (product) => `· ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
+      (product) =>
+        `· ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
     )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {
@@ -53,9 +54,7 @@ function SlideCart() {
                   <div className="flex h-full flex-col overflow-y-scroll bg-white shadow-xl dark:bg-gray-900">
                     <div className="flex-1 overflow-y-auto py-6 px-4 sm:px-6">
                       <div className="flex items-center justify-start">
-                        {show ? (
-                          ""
-                        ) : (
+                        {!show && (
                           <BiChevronLeft
                             className="mr-3 text-4xl text-slate-400 hover:text-slate-900 dark:hover:text-slate-50"
                             onClick={() => setShow(true)}
@@ -75,7 +74,7 @@ function SlideCart() {
                       </div>
 
                       {show ? (
-                        <ProductsCart products={products}/>
+                        <ProductsCart products={products} />
                       ) : (
                         <Payment />
                       )}

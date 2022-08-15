@@ -1,22 +1,27 @@
 import { useEffect, useRef, useState } from "react";
+import { getDataProducts } from "../services/data";
+import { ProductContext } from "../Context";
 import Card from "./Card";
 import Notification from "./Notification";
 import SlideCart from "./SlideCart";
-import { ProductContext } from "../Context";
 import Tags from "./Tags";
 import Filters from "./Filters";
-
-import { getDataProducts } from "../services/data";
 import Loading from "./Loading";
 
 function CardsContainer() {
   const [dataProducts, setDataProducts] = useState([]);
+  const [dataInitial, setDataInitial] = useState([]);
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getDataProducts()
       .then(setDataProducts)
       .then(() => setIsLoading(false))
+      .catch((err) => console.log(err));
+
+    getDataProducts()
+      .then(setDataInitial)
       .catch((err) => console.log(err));
   }, []);
 
@@ -35,7 +40,7 @@ function CardsContainer() {
   };
 
   const filterProducts = (e) => {
-    setDataProducts(dataProducts); //esto debe setear los productos al estado inicial
+    setDataProducts(dataInitial);
 
     if (e.target.innerText === "Todo") {
       return;
