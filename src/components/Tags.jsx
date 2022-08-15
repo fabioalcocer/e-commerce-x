@@ -14,8 +14,6 @@ function Tags() {
     { id: 6, text: "Tennis" },
   ];
 
-
-
   return (
     <div className="mt-4">
       <ul className="text-md flex overflow-x-auto p-1 pl-[2px] text-center font-medium text-gray-100">

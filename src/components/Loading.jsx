@@ -7,7 +7,7 @@ function Loading() {
       height="128px"
       width="128px"
       viewBox="0 0 128 128"
-      className="pl"
+      className="pl mx-auto"
     >
       <defs>
         <linearGradient y2="1" x2="0" y1="0" x1="0" id="pl-grad">

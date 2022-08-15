@@ -22,7 +22,7 @@ function App() {
       <AppContext.Provider
         value={{ count, handleCount, openS, setOpen, openSlide }}
       >
-        <main className="container mx-auto flex flex-col p-4 pt-0">
+        <main className="container mx-auto flex flex-col p-4 pt-0 min-h-screen">
           <section className="container mx-auto max-w-7xl pr-1 md:pr-2">
             <Header />
             <Details />

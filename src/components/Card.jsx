@@ -24,6 +24,7 @@ function Card({ product, showNotification }) {
 
       <button
         onClick={() => {
+          console.log(product);
           product.currentSize = size
           handleCount(products),
             showNotification(),

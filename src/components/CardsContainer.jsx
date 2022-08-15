@@ -16,12 +16,11 @@ function CardsContainer() {
 
   useEffect(() => {
     getDataProducts()
-      .then(setDataProducts)
+      .then((data) => {
+        setDataProducts(data);
+        setDataInitial(data)
+      })
       .then(() => setIsLoading(false))
-      .catch((err) => console.log(err));
-
-    getDataProducts()
-      .then(setDataInitial)
       .catch((err) => console.log(err));
   }, []);
 
