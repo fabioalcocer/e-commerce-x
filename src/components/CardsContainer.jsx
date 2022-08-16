@@ -6,7 +6,7 @@ import Notification from "./Notification";
 import SlideCart from "./SlideCart";
 import Tags from "./Tags";
 import Filters from "./Filters";
-import Loading from "./Loading";
+import Loading from "./Loader";
 
 function CardsContainer() {
   const [dataProducts, setDataProducts] = useState([]);
@@ -71,7 +71,7 @@ function CardsContainer() {
           <Tags />
           <Filters />
         </section>
-        <section className="container mx-auto pb-5">
+        <section className="container mx-auto pb-5 flex items-center justify-center min-h-[50vh]">
           <div className="lg:-mx-2 lg:flex">
             <div className="lg:w-5/5 mx-auto mt-6 lg:mt-0 lg:px-2 ">
               {isLoading ? (
