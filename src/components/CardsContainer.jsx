@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState } from "react";
-import { getDataProducts } from "../services/data";
-import { ProductContext } from "../Context";
+import { useRef, useState, useContext } from "react";
+import { AppContext, ProductContext } from "../Context";
 import Card from "./Card";
 import Notification from "./Notification";
 import SlideCart from "./SlideCart";
@@ -9,20 +8,8 @@ import Filters from "./Filters";
 import Loading from "./Loader";
 
 function CardsContainer() {
-  const [dataProducts, setDataProducts] = useState([]);
-  const [dataInitial, setDataInitial] = useState([]);
-
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    getDataProducts()
-      .then((data) => {
-        setDataProducts(data);
-        setDataInitial(data)
-      })
-      .then(() => setIsLoading(false))
-      .catch((err) => console.log(err));
-  }, []);
+  const { dataProducts, setDataProducts, dataInitial, isLoading } =
+    useContext(AppContext);
 
   const [products, setProducts] = useState([]);
   const [method, setMethod] = useState("Efectivo");
@@ -56,13 +43,14 @@ function CardsContainer() {
     <>
       <ProductContext.Provider
         value={{
+          dataProducts,
+          setDataProducts,
           products,
           setProducts,
           method,
           setMethod,
           size,
           setSize,
-          dataProducts,
           filterProducts,
         }}
       >
@@ -71,7 +59,7 @@ function CardsContainer() {
           <Tags />
           <Filters />
         </section>
-        <section className="container mx-auto pb-5 flex items-center justify-center min-h-[50vh]">
+        <section className="container mx-auto flex min-h-[50vh] items-center justify-center pb-5">
           <div className="lg:-mx-2 lg:flex">
             <div className="lg:w-5/5 mx-auto mt-6 lg:mt-0 lg:px-2 ">
               {isLoading ? (

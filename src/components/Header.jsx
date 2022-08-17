@@ -1,5 +1,5 @@
 import logo from "../assets/logo.webp";
-import Search from "./Search";
+import Navbar from "./NavBar";
 
 function Header() {
   return (
@@ -9,7 +9,7 @@ function Header() {
         src={logo}
         alt="logo"
       />
-      <Search />
+      <Navbar />
     </header>
   );
 }

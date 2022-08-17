@@ -2,10 +2,10 @@ import { AppContext } from "../Context.jsx";
 import { useState, useContext } from "react";
 import { BiSearch, BiCart, BiMoon, BiSun } from "react-icons/bi";
 
-function Search() {
+function Navbar() {
   const { count, openSlide } = useContext(AppContext);
-  const [search, setSearch] = useState("");
   const [theme, setTheme] = useState(true);
+  const [search, setSearch] = useState("");
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -59,4 +59,4 @@ function Search() {
   );
 }
 
-export default Search;
+export default Navbar;
