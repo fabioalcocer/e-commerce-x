@@ -4,7 +4,7 @@ import { BiSearch, BiCart, BiMoon, BiSun } from "react-icons/bi";
 import { useEffect } from "react";
 
 function Navbar() {
-  const { count, openSlide, dataInitial, dataProducts, setDataProducts } =
+  const { count, openSlide, dataInitial, setDataProducts } =
     useContext(AppContext);
   const [theme, setTheme] = useState(true);
   const [search, setSearch] = useState("");
@@ -19,7 +19,7 @@ function Navbar() {
     setSearch(e.target.value);
   };
 
-  const productsSearch = dataProducts.filter((product) =>
+  const productsSearch = dataInitial.filter((product) =>
     product.name.toLowerCase().includes(search)
   );
 
