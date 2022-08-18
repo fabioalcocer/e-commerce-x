@@ -19,10 +19,9 @@ function Navbar() {
     setSearch(e.target.value);
   };
 
-  const productsSearch = () =>
-    dataProducts.filter((product) =>
-      product.name.toLowerCase().includes(search)
-    );
+  const productsSearch = dataProducts.filter((product) =>
+    product.name.toLowerCase().includes(search)
+  );
 
   const handleTheme = () => {
     document.querySelector("body").classList.toggle("dark");
