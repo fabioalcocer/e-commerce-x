@@ -8,9 +8,9 @@ function Tags() {
   const tags = [
     { id: 1, text: "Todo" },
     { id: 2, text: "Sudaderas" },
-    { id: 3, text: "Pantalones" },
+    { id: 3, text: "Poleras" },
     { id: 4, text: "Shorts" },
-    { id: 5, text: "Camisetas" },
+    { id: 5, text: "Pantalones" },
     { id: 6, text: "Tennis" },
   ];
 
