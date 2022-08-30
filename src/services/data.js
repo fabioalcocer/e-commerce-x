@@ -1,4 +1,4 @@
-const API_URL = "https://api-ecommerse.up.railway.app/products";
+const API_URL = "https://api-prueba-w4t0.onrender.com/products";
 
 export async function getDataProducts() {
   try {

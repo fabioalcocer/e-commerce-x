@@ -33,7 +33,7 @@ $ npm install
 ### 2. Use / build your own API
 
 ####  Make sure your API has this structure
-  - API Docs URL: [https://github.com/Andres2310/API-ecommerse-x](https://github.com/Andres2310/API-ecommerse-x)
+  - API Docs URL: [https://github.com/fabioalcocer/api-e-commerce-x](https://github.com/fabioalcocer/api-e-commerce-x)
 ```json
 {
   "id": 1,
