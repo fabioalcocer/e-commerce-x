@@ -1,4 +1,4 @@
-const API_URL = "https://api-prueba-w4t0.onrender.com/products";
+const API_URL = "https://api-ecommerce-x.vercel.app/api/datos";
 
 export async function getDataProducts() {
   try {
