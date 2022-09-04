@@ -2,18 +2,24 @@ import { AppContext } from "../Context.jsx";
 import { useState, useContext } from "react";
 import { BiSearch, BiCart, BiMoon, BiSun } from "react-icons/bi";
 import { useEffect } from "react";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 function Navbar() {
   const { count, openSlide, dataInitial, setDataProducts } =
     useContext(AppContext);
-  const [theme, setTheme] = useState(true);
+
   const [search, setSearch] = useState("");
+  const [theme, setTheme] = useLocalStorage("theme", "light");
 
   useEffect(() => {
     !search.trim()
       ? setDataProducts(dataInitial)
       : setDataProducts(productsSearch);
   }, [search]);
+
+  useEffect(() => {
+    document.querySelector("body").className = theme;
+  }, [theme]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);
@@ -24,12 +30,7 @@ function Navbar() {
   );
 
   const handleTheme = () => {
-    document.querySelector("body").classList.toggle("dark");
-    handleThemeIcon();
-  };
-
-  const handleThemeIcon = () => {
-    theme ? setTheme(false) : setTheme(true);
+    theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
   return (
@@ -46,7 +47,7 @@ function Navbar() {
           placeholder="Buscar"
         />
         <div className="text-3xl" onClick={handleTheme}>
-          {theme ? (
+          {theme === "light" ? (
             <BiSun className="transition-colors: cursor-pointer text-2xl text-slate-600 duration-300 hover:text-black dark:text-slate-200 dark:hover:text-white  lg:text-3xl" />
           ) : (
             <BiMoon className="transition-colors: cursor-pointer text-2xl text-slate-600 duration-300 hover:text-black dark:text-slate-200 dark:hover:text-white  lg:text-3xl" />

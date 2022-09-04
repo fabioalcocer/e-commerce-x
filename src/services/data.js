@@ -1,4 +1,4 @@
-const API_URL = "https://api-ecommerce-x.vercel.app/api/datos";
+const API_URL = "https://api-ecommerce-x.vercel.app/api/products";
 
 export async function getDataProducts() {
   try {
