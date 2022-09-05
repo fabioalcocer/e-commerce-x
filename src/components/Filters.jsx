@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { ProductContext } from "../Context.jsx";
+import { AppContext } from "../Context.jsx";
 
 import { Menu, Transition } from "@headlessui/react";
 import { BiFilterAlt } from "react-icons/bi";
@@ -9,7 +9,7 @@ function classNames(...classes) {
 }
 
 function Filters() {
-  const { dataProducts } = useContext(ProductContext);
+  const { dataProducts } = useContext(AppContext);
 
   return (
     <div className="mt-8 flex items-center justify-between gap-4 pl-[2px]">

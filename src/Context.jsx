@@ -29,6 +29,20 @@ export function AppContextProvider({ children }) {
     setOpen(true);
   };
 
+  const filterProducts = (e) => {
+    setDataProducts(dataInitial);
+
+    if (e.target.innerText === "Todo") {
+      return;
+    }
+
+    setDataProducts((dataProducts) =>
+      dataProducts.filter(
+        (products) => products.category === e.target.innerText
+      )
+    );
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -41,9 +55,31 @@ export function AppContextProvider({ children }) {
         setDataProducts,
         dataInitial,
         isLoading,
+        filterProducts,
       }}
     >
       {children}
     </AppContext.Provider>
+  );
+}
+
+export function ProductContextProvider({ children }) {
+  const [products, setProducts] = useState([]);
+  const [method, setMethod] = useState("Efectivo");
+  const [size, setSize] = useState("");
+
+  return (
+    <ProductContext.Provider
+      value={{
+        products,
+        setProducts,
+        method,
+        setMethod,
+        size,
+        setSize,
+      }}
+    >
+      {children}
+    </ProductContext.Provider>
   );
 }

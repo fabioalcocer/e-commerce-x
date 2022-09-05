@@ -1,5 +1,6 @@
-import { useRef, useState, useContext } from "react";
-import { AppContext, ProductContext } from "../Context";
+import { useRef, useContext } from "react";
+import { AppContext, ProductContextProvider } from "../Context";
+import useLocalStorage from "../hooks/useLocalStorage";
 import Card from "./Card";
 import Notification from "./Notification";
 import SlideCart from "./SlideCart";
@@ -8,12 +9,7 @@ import Filters from "./Filters";
 import Loading from "./Loader";
 
 function CardsContainer() {
-  const { dataProducts, setDataProducts, dataInitial, isLoading } =
-    useContext(AppContext);
-
-  const [products, setProducts] = useState([]);
-  const [method, setMethod] = useState("Efectivo");
-  const [size, setSize] = useState("");
+  const { dataProducts, isLoading } = useContext(AppContext);
 
   const refNotification = useRef(null);
 
@@ -25,35 +21,9 @@ function CardsContainer() {
     }, 2000);
   };
 
-  const filterProducts = (e) => {
-    setDataProducts(dataInitial);
-
-    if (e.target.innerText === "Todo") {
-      return;
-    }
-
-    setDataProducts((dataProducts) =>
-      dataProducts.filter(
-        (products) => products.category === e.target.innerText
-      )
-    );
-  };
-
   return (
-    <>
-      <ProductContext.Provider
-        value={{
-          dataProducts,
-          setDataProducts,
-          products,
-          setProducts,
-          method,
-          setMethod,
-          size,
-          setSize,
-          filterProducts,
-        }}
-      >
+    <ProductContextProvider>
+      <>
         <Notification refNoti={refNotification} />
         <section className="container mx-auto max-w-7xl">
           <Tags />
@@ -81,8 +51,8 @@ function CardsContainer() {
           </div>
         </section>
         <SlideCart />
-      </ProductContext.Provider>
-    </>
+      </>
+    </ProductContextProvider>
   );
 }
 
