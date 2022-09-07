@@ -2,7 +2,13 @@ import { useContext } from "react";
 import { AppContext } from "../Context.jsx";
 
 function ProductsCart({ products }) {
-  const { setProducts } = useContext(AppContext);
+  const { setProducts, setCount, count } = useContext(AppContext);
+
+  const handleRemoveBtn = (product) => {
+    setCount(count - 1),
+      (reduce) => reduce - product.price,
+      setProducts(products.filter((x) => x.id !== product.id));
+  };
 
   return (
     <div className="mt-8">
@@ -37,12 +43,7 @@ function ProductsCart({ products }) {
 
                   <div className="flex">
                     <button
-                      onClick={() => {
-                        (reduce) => reduce - product.price,
-                          setProducts(
-                            products.filter((x) => x.id !== product.id)
-                          );
-                      }}
+                      onClick={() => handleRemoveBtn(product)}
                       type="button"
                       className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
                     >

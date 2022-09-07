@@ -7,7 +7,6 @@ import useLocalStorage from "../hooks/useLocalStorage";
 function Navbar() {
   const { count, openSlide, dataInitial, setDataProducts } =
     useContext(AppContext);
-
   const [search, setSearch] = useState("");
   const [theme, setTheme] = useLocalStorage("theme", "light");
 

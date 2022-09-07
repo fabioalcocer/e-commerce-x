@@ -26,9 +26,9 @@ export function AppContextProvider({ children }) {
       .catch((err) => console.log(err));
   }, []);
 
-  const handleCount = (products) => {
-    setCount(products.length + 1);
-  };
+  // const handleCount = (len) => {
+  //   setCount(len);
+  // };
 
   const openSlide = () => {
     setOpen(true);
@@ -52,7 +52,7 @@ export function AppContextProvider({ children }) {
     <AppContext.Provider
       value={{
         count,
-        handleCount,
+        setCount,
         openS,
         setOpen,
         openSlide,

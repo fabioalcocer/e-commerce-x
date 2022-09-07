@@ -3,14 +3,15 @@ import { useContext } from "react";
 import { AppContext } from "../Context";
 
 function Card({ product, showNotification }) {
-  const { handleCount, products, setProducts, size } = useContext(AppContext);
+  const { products, setProducts, size, setCount } = useContext(AppContext);
 
   const createCurrentSize = (product) => {
     product.currentSize = size;
   };
 
   const createProductCart = (product) => {
-    showNotification(), handleCount(products), createCurrentSize(product);
+    showNotification(), setCount(products.length + 1);
+    createCurrentSize(product);
     setProducts([...products, product]);
   };
 
