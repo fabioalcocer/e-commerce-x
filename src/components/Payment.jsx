@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ProductContext } from "../Context.jsx";
+import { AppContext } from "../Context.jsx";
 
 function Payment() {
-  const { setMethod } = useContext(ProductContext);
+  const { setMethod } = useContext(AppContext);
 
   const handleMethod = (e) => {
     setMethod(e.target.value);

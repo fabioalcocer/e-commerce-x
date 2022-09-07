@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import { ProductContext } from "../Context.jsx";
+import { AppContext } from "../Context.jsx";
 
-function ProductsCart({products}) {
-  const { setProducts } = useContext(ProductContext);
-  
+function ProductsCart({ products }) {
+  const { setProducts } = useContext(AppContext);
+
   return (
     <div className="mt-8">
       <div className="flow-root">

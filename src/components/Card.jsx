@@ -1,19 +1,16 @@
 import Sizes from "./Sizes";
 import { useContext } from "react";
-import { AppContext, ProductContext } from "../Context";
+import { AppContext } from "../Context";
 
 function Card({ product, showNotification }) {
-  const { handleCount } = useContext(AppContext);
-  const { products, setProducts, size } = useContext(ProductContext);
+  const { handleCount, products, setProducts, size } = useContext(AppContext);
 
   const createCurrentSize = (product) => {
     product.currentSize = size;
   };
 
   const createProductCart = (product) => {
-    showNotification(),
-    handleCount(products),
-    createCurrentSize(product);
+    showNotification(), handleCount(products), createCurrentSize(product);
     setProducts([...products, product]);
   };
 

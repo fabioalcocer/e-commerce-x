@@ -1,8 +1,8 @@
 import { useContext } from "react";
-import { ProductContext } from "../Context.jsx";
+import { AppContext } from "../Context.jsx";
 
 function Sizes(product) {
-  const { setSize } = useContext(ProductContext);
+  const { setSize } = useContext(AppContext);
 
   return (
     <div className="flex justify-start gap-2">

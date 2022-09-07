@@ -1,15 +1,20 @@
 import { createContext, useState, useEffect } from "react";
+import useLocalStorage from "./hooks/useLocalStorage";
 import { getDataProducts } from "./services/data";
 
 export const AppContext = createContext();
 export const ProductContext = createContext();
 
 export function AppContextProvider({ children }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useLocalStorage("count", 0);
   const [openS, setOpen] = useState(false);
   const [dataProducts, setDataProducts] = useState([]);
   const [dataInitial, setDataInitial] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  const [products, setProducts] = useLocalStorage("products", []);
+  const [method, setMethod] = useState("Efectivo");
+  const [size, setSize] = useState("");
 
   useEffect(() => {
     getDataProducts()
@@ -56,21 +61,6 @@ export function AppContextProvider({ children }) {
         dataInitial,
         isLoading,
         filterProducts,
-      }}
-    >
-      {children}
-    </AppContext.Provider>
-  );
-}
-
-export function ProductContextProvider({ children }) {
-  const [products, setProducts] = useState([]);
-  const [method, setMethod] = useState("Efectivo");
-  const [size, setSize] = useState("");
-
-  return (
-    <ProductContext.Provider
-      value={{
         products,
         setProducts,
         method,
@@ -80,6 +70,6 @@ export function ProductContextProvider({ children }) {
       }}
     >
       {children}
-    </ProductContext.Provider>
+    </AppContext.Provider>
   );
 }

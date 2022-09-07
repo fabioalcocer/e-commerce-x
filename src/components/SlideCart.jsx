@@ -2,13 +2,12 @@ import { Fragment, useContext, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle, BiChevronLeft } from "react-icons/bi";
 import { BsWhatsapp } from "react-icons/bs";
-import { AppContext, ProductContext } from "../Context.jsx";
+import { AppContext } from "../Context.jsx";
 import Payment from "./Payment.jsx";
 import ProductsCart from "./ProductsCart.jsx";
 
 function SlideCart() {
-  const { openS, setOpen } = useContext(AppContext);
-  const { products, method } = useContext(ProductContext);
+  const { openS, setOpen, products, method } = useContext(AppContext);
   const [show, setShow] = useState(true);
 
   const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
