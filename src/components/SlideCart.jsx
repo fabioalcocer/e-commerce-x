@@ -10,7 +10,11 @@ function SlideCart() {
   const { openS, setOpen, products, method } = useContext(AppContext);
   const [show, setShow] = useState(true);
 
-  const reduce = products.reduce((acc, curr) => acc + curr.price, 0);
+  // TODO Arreglar que al aumentar la cantidad no se re-renderiza el reduce
+  const reduce = products.reduce(
+    (acc, curr) => acc + curr.price * curr.quantity,
+    0
+  );
 
   const string =
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(

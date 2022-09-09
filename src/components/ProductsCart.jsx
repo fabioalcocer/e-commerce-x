@@ -8,7 +8,6 @@ function ProductsCart({ products }) {
 
   const handleRemoveBtn = (product) => {
     setCount(count - 1),
-      (reduce) => reduce - product.price,
       setProducts(products.filter((x) => x.id !== product.id));
   };
 
