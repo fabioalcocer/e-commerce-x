@@ -15,7 +15,7 @@ function SlideCart() {
   const string =
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(
       (product) =>
-        `· ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
+        `·${product.quantity} ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
     )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(",", "");
 
   const handleShowSection = () => {

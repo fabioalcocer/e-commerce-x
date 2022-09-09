@@ -26,10 +26,6 @@ export function AppContextProvider({ children }) {
       .catch((err) => console.log(err));
   }, []);
 
-  // const handleCount = (len) => {
-  //   setCount(len);
-  // };
-
   const openSlide = () => {
     setOpen(true);
   };
