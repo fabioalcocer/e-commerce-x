@@ -48,12 +48,7 @@ function ProductsCart({ products }) {
                       {`$${product.price * product.quantity}`}
                     </p>
                   </div>
-                  <p className="mt-2 text-base capitalize text-gray-500 dark:text-gray-300">
-                    Talla: {product.currentSize}
-                  </p>
-                </div>
-                <div className="flex flex-1 items-end justify-between">
-                  <p className="flex items-center gap-2 text-base text-gray-500 dark:text-gray-200 md:text-base">
+                  <p className="mt-2 flex items-center gap-2 text-base text-gray-500 dark:text-gray-200 md:text-base">
                     Cantidad:
                     <HiMinusCircle
                       className="cursor-pointer text-xl text-indigo-600"
@@ -65,10 +60,18 @@ function ProductsCart({ products }) {
                       onClick={() => increaseQuantity(product)}
                     />
                   </p>
+                </div>
+                <div className="mt-2 flex flex-1 flex-wrap items-end justify-between">
+                  <p className="mt-0 text-base capitalize text-gray-500 dark:text-gray-300">
+                    Talla:{" "}
+                    <span className="font-bold text-black dark:text-white">
+                      {product.currentSize}
+                    </span>
+                  </p>
                   <button
                     onClick={() => handleRemoveBtn(product)}
                     type="button"
-                    className="font-semibold text-indigo-600 hover:text-indigo-500 dark:text-indigo-500 dark:hover:text-indigo-400"
+                    className="mt-1 rounded-md bg-indigo-500 p-1 text-sm font-semibold text-white transition-colors duration-300 hover:bg-indigo-400 sm:text-base"
                   >
                     Eliminar
                   </button>
