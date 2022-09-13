@@ -17,11 +17,13 @@ function ProductsCart({ products }) {
     }
     product.quantity--;
     setQuantity(product.quantity);
+    setProducts([...products]);
   };
 
   const increaseQuantity = (product) => {
     product.quantity++;
     setQuantity(product.quantity);
+    setProducts([...products]);
   };
 
   return (

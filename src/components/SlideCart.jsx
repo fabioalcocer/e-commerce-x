@@ -1,4 +1,4 @@
-import { Fragment, useContext, useState } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { Dialog, Transition } from "@headlessui/react";
 import { BiXCircle, BiChevronLeft } from "react-icons/bi";
 import { BsWhatsapp } from "react-icons/bs";
@@ -9,12 +9,15 @@ import ProductsCart from "./ProductsCart.jsx";
 function SlideCart() {
   const { openS, setOpen, products, method } = useContext(AppContext);
   const [show, setShow] = useState(true);
+  const [reduce, setReduce] = useState(0);
 
-  // TODO Arreglar que al aumentar la cantidad no se re-renderiza el reduce
-  const reduce = products.reduce(
-    (acc, curr) => acc + curr.price * curr.quantity,
-    0
-  );
+  useEffect(() => {
+    const temp = products.reduce(
+      (acc, curr) => acc + curr.price * curr.quantity,
+      0
+    );
+    setReduce(temp);
+  }, [products]);
 
   const string =
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(
