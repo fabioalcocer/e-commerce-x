@@ -1,15 +1,15 @@
-import "../styles/Loader.css";
+import '../styles/Loader.css'
 
-function Loading() {
+function Loading () {
   return (
-    <div className="spinner mx-auto mt-9">
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
-      <div className="dot"></div>
+    <div className='spinner mx-auto mt-9'>
+      <div className='dot' />
+      <div className='dot' />
+      <div className='dot' />
+      <div className='dot' />
+      <div className='dot' />
     </div>
-  );
+  )
 }
 
-export default Loading;
+export default Loading
