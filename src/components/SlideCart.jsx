@@ -7,7 +7,7 @@ import Payment from './Payment.jsx'
 import ProductsCart from './ProductsCart.jsx'
 
 function SlideCart () {
-  const { openS, setOpen, products, method } = useContext(AppContext)
+  const { openS, setOpen, products, setProducts, method, setCount } = useContext(AppContext)
   const [show, setShow] = useState(true)
   const [reduce, setReduce] = useState(0)
 
@@ -23,15 +23,31 @@ function SlideCart () {
     `Hola! Quisiera comprar los siguientes productos:\n${products.map(
       (product) =>
         `·${product.quantity} ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
-    )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(',', '')
+    )}\n*Método de pago: ${method}\nTOTAL: ${reduce}Bs.`.replaceAll(
+      ',',
+      ''
+    )
 
   const handleShowSection = () => {
     show ? setShow(false) : setShow(true)
   }
 
+  const finalizePurchase = () => {
+    setProducts([])
+    setCount(0)
+    setShow(true)
+  }
+
   return (
-    <Transition.Root show={openS} as={Fragment}>
-      <Dialog as='div' className='relative z-10' onClose={setOpen}>
+    <Transition.Root
+      show={openS}
+      as={Fragment}
+    >
+      <Dialog
+        as='div'
+        className='relative z-10'
+        onClose={setOpen}
+      >
         <Transition.Child
           as={Fragment}
           enter='ease-in-out duration-500'
@@ -109,18 +125,22 @@ function SlideCart () {
                           </div>
                           )
                         : (
-                          <div className='mt-6'>
+                          <button
+                            onClick={finalizePurchase}
+                            className='mt-6 w-full'
+                          >
                             <a
                               target='_blank'
                               href={`https://wa.me/59170767393?text=${encodeURIComponent(
-                                string
-                              )}`}
-                              className='transition-colors: flex items-center justify-center gap-1 rounded-md border border-transparent bg-emerald-500 px-6 py-3 text-base font-semibold text-white shadow-sm duration-300 hover:bg-emerald-700' rel='noreferrer'
+                              string
+                            )}`}
+                              className='transition-colors: flex items-center justify-center gap-1 rounded-md border border-transparent bg-emerald-500 px-6 py-3 text-base font-semibold text-white shadow-sm duration-300 hover:bg-emerald-700'
+                              rel='noreferrer'
                             >
                               <BsWhatsapp className='text-xl' />
                               Whatsapp
                             </a>
-                          </div>
+                          </button>
                           )}
 
                       <div className='mt-6 flex justify-center text-center text-gray-500 dark:text-gray-300'>
