@@ -10,7 +10,6 @@ export function AppContextProvider ({ children }) {
   const [openS, setOpen] = useState(false)
   const [dataProducts, setDataProducts] = useState([])
   const [dataInitial, setDataInitial] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
 
   const [products, setProducts] = useLocalStorage('products', [])
   const [method, setMethod] = useState('Efectivo')
@@ -22,13 +21,8 @@ export function AppContextProvider ({ children }) {
         setDataProducts(data)
         setDataInitial(data)
       })
-      .then(() => setIsLoading(false))
       .catch((err) => console.log(err))
   }, [])
-
-  const openSlide = () => {
-    setOpen(true)
-  }
 
   const filterProducts = (e) => {
     setDataProducts(dataInitial)
@@ -51,11 +45,9 @@ export function AppContextProvider ({ children }) {
         setCount,
         openS,
         setOpen,
-        openSlide,
         dataProducts,
         setDataProducts,
         dataInitial,
-        isLoading,
         filterProducts,
         products,
         setProducts,

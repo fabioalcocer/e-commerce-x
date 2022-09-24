@@ -8,7 +8,7 @@ import Filters from './Filters'
 import Loading from './Loader'
 
 function CardsContainer () {
-  const { dataProducts, isLoading } = useContext(AppContext)
+  const { dataProducts } = useContext(AppContext)
 
   const refNotification = useRef(null)
 
@@ -30,7 +30,7 @@ function CardsContainer () {
       <section className='container mx-auto flex min-h-[50vh] items-center justify-center pb-5'>
         <div className='lg:-mx-2 lg:flex'>
           <div className='lg:w-5/5 mx-auto mt-6 lg:mt-0 lg:px-2 '>
-            {isLoading
+            {dataProducts.length === 0
               ? (
                 <Loading />
                 )
