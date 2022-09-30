@@ -6,11 +6,13 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "deploy": "npm run build && gh-pages -d dist"
+    "deploy": "npm run build && gh-pages -d dist",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
+    "@builder.io/partytown": "0.7.0",
     "@headlessui/react": "^1.6.6",
-    "flowbite": "^1.4.7",
+    "flowbite": "1.4.7",
     "flowbite-react": "^0.1.3",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
