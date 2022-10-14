@@ -18,7 +18,7 @@
 
 ### Links
 
-- API: [API](https://api-ecommerse.up.railway.app/products)
+- API: [API](https://api-ecommerce-x.vercel.app/api/products)
 - Repository URL: [Repository](https://github.com/fabioalcocer/e-commerce-x)
 - Live Site URL: [Live](https://e-commerce-x.vercel.app)
 
