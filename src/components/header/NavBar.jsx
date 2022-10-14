@@ -1,8 +1,8 @@
-import { AppContext } from '../Context.jsx'
+import { AppContext } from '../../Context.jsx'
 import { useContext, useEffect } from 'react'
 import { BiCart, BiMoon, BiSun } from 'react-icons/bi'
 
-import useLocalStorage from '../hooks/useLocalStorage'
+import useLocalStorage from '../../hooks/useLocalStorage'
 import SearchBar from './SearchBar.jsx'
 
 function Navbar () {

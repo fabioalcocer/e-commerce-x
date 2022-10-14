@@ -1,4 +1,4 @@
-import Header from './components/Header'
+import Header from './components/header/Header'
 import Details from './components/Details'
 import CardsContainer from './components/CardsContainer'
 import Footer from './components/Footer'

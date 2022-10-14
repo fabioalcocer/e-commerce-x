@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from '../Context.jsx'
+import { AppContext } from '../../Context'
 
 function Payment () {
   const { setMethod } = useContext(AppContext)
@@ -15,7 +15,7 @@ function Payment () {
         background='transparent'
         speed='.6'
         style={{
-          width: '300px',
+          width: '100%',
           height: '300px',
           margin: '0 auto'
         }}

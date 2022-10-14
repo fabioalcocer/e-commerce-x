@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { AppContext } from '../Context.jsx'
+import { AppContext } from '../../Context'
 import { HiMinusCircle, HiPlusCircle } from 'react-icons/hi'
 
 function ProductsCart ({ products }) {
@@ -47,7 +47,7 @@ function ProductsCart ({ products }) {
                   <div className='flex justify-between text-lg font-semibold text-gray-900 dark:text-slate-200'>
                     <h3>{product.name}</h3>
                     <p className='ml-4 font-semibold text-emerald-600 dark:text-emerald-500'>
-                      {`$${product.price * product.quantity}`}
+                      {`${product.price * product.quantity}Bs`}
                     </p>
                   </div>
                   <p className='mt-2 flex items-center gap-2 text-base text-gray-500 dark:text-gray-200 md:text-base'>
