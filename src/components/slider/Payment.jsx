@@ -1,9 +1,4 @@
-import { useContext } from 'react'
-import { AppContext } from '../../Context'
-
-function Payment () {
-  const { setMethod } = useContext(AppContext)
-
+function Payment ({ setMethod }) {
   const handleMethod = (e) => {
     setMethod(e.target.value)
   }

@@ -11,9 +11,7 @@ export function AppContextProvider ({ children }) {
   const [dataProducts, setDataProducts] = useState([])
   const [dataInitial, setDataInitial] = useState([])
 
-  const [products, setProducts] = useLocalStorage('products', [])
-  const [method, setMethod] = useState('Efectivo')
-  const [size, setSize] = useState('')
+  const [productsCart, setProductsCart] = useLocalStorage('products', [])
 
   useEffect(() => {
     getDataProducts()
@@ -21,19 +19,17 @@ export function AppContextProvider ({ children }) {
         setDataProducts(data)
         setDataInitial(data)
       })
-      .catch((err) => console.log(err))
+      .catch((err) => console.error(err))
   }, [])
 
   const filterProducts = (e) => {
     setDataProducts(dataInitial)
 
-    if (e.target.innerText === 'Todo') {
-      return
-    }
+    if (e.target.innerText === 'Todo') return
 
     setDataProducts((dataProducts) =>
       dataProducts.filter(
-        (products) => products.category === e.target.innerText
+        (product) => product.category === e.target.innerText
       )
     )
   }
@@ -49,12 +45,8 @@ export function AppContextProvider ({ children }) {
         setDataProducts,
         dataInitial,
         filterProducts,
-        products,
-        setProducts,
-        method,
-        setMethod,
-        size,
-        setSize
+        productsCart,
+        setProductsCart
       }}
     >
       {children}

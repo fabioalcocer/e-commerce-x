@@ -7,19 +7,21 @@ import ProductsCart from './ProductsCart.jsx'
 import BtnWhatsapp from './BtnWhatsapp.jsx'
 
 function SlideCart () {
-  const { openS, setOpen, products, setProducts, method, setCount } =
+  const { openS, setOpen, productsCart, setProductsCart, setCount } =
     useContext(AppContext)
+
   const [show, setShow] = useState(true)
+  const [method, setMethod] = useState('Efectivo')
 
   const total = useMemo(() => {
-    return products.reduce(
+    return productsCart.reduce(
       (acc, curr) => acc + curr.price * curr.quantity,
       0
     )
-  }, [products])
+  }, [productsCart])
 
   const string =
-    `Hola! Quisiera comprar los siguientes productos:\n${products.map(
+    `Hola! Quisiera comprar los siguientes productos:\n${productsCart.map(
       (product) =>
         `·${product.quantity} ${product.name} Talla ${product.currentSize} - ${product.price}Bs.\n`
     )}\n*Método de pago: ${method}\nTOTAL: ${total}Bs.`.replaceAll(
@@ -28,7 +30,7 @@ function SlideCart () {
     )
 
   const finalizePurchase = () => {
-    setProducts([])
+    setProductsCart([])
     setCount(0)
     setShow(true)
   }
@@ -77,10 +79,10 @@ function SlideCart () {
 
                       {show
                         ? (
-                          <ProductsCart products={products} />
+                          <ProductsCart productsCart={productsCart} />
                           )
                         : (
-                          <Payment />
+                          <Payment setMethod={setMethod} />
                           )}
                     </div>
 

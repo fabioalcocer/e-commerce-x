@@ -1,19 +1,17 @@
 import Sizes from './Sizes'
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AppContext } from '../Context'
 
 function Card ({ product, showNotification }) {
-  const { products, setProducts, size, setCount } = useContext(AppContext)
+  const { productsCart, setProductsCart, setCount } = useContext(AppContext)
 
-  const createCurrentSize = (product) => {
-    product.currentSize = size
-  }
+  useEffect(() => {
+    setCount(productsCart.length)
+  }, [productsCart])
 
   const createProductCart = (product) => {
     showNotification()
-    setCount(products.length + 1)
-    createCurrentSize(product)
-    setProducts([...products, product])
+    setProductsCart([...productsCart, product])
   }
 
   return (
@@ -30,7 +28,7 @@ function Card ({ product, showNotification }) {
         <p className='font-bold text-emerald-600 dark:text-emerald-500'>{`${product.price}Bs`}</p>
       </div>
 
-      <Sizes {...product} />
+      <Sizes product={product} />
 
       <button
         onClick={() => createProductCart(product)}
