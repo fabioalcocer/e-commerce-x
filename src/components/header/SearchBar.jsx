@@ -1,4 +1,4 @@
-import { AppContext } from '../../Context'
+import { AppContext } from '@/Context'
 import { useState, useEffect, useContext } from 'react'
 import { BiSearch } from 'react-icons/bi'
 

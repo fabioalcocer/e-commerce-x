@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { AppContext } from '../Context'
+import { AppContext } from '@/Context'
 
 function Tags () {
   const [active, setActive] = useState('Todo')

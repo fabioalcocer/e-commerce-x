@@ -1,7 +1,7 @@
 import { Fragment, useContext, useState, useMemo } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { BiXCircle } from 'react-icons/bi'
-import { AppContext } from '../../Context.jsx'
+import { AppContext } from '@/Context.jsx'
 import Payment from './Payment.jsx'
 import ProductsCart from './ProductsCart.jsx'
 import BtnWhatsapp from './BtnWhatsapp.jsx'

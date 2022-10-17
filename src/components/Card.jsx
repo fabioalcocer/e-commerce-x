@@ -1,9 +1,10 @@
 import Sizes from './Sizes'
 import { useContext, useEffect } from 'react'
-import { AppContext } from '../Context'
+import { AppContext } from '@/Context'
 
 function Card ({ product, showNotification }) {
-  const { productsCart, setProductsCart, setCount } = useContext(AppContext)
+  const { productsCart, setProductsCart, setCount } =
+    useContext(AppContext)
 
   useEffect(() => {
     setCount(productsCart.length)

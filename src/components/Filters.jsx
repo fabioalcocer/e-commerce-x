@@ -1,5 +1,5 @@
 import { useContext } from 'react'
-import { AppContext } from '../Context.jsx'
+import { AppContext } from '@/Context.jsx'
 
 import { Menu, Transition } from '@headlessui/react'
 import { BiFilterAlt } from 'react-icons/bi'

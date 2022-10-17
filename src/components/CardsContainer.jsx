@@ -1,5 +1,5 @@
 import { useRef, useContext } from 'react'
-import { AppContext } from '../Context'
+import { AppContext } from '@/Context'
 import Card from './Card'
 import Notification from './Notification'
 import SlideCart from './slider/SlideCart'

@@ -1,4 +1,4 @@
-import { AppContext } from '../../Context.jsx'
+import { AppContext } from '@/Context.jsx'
 import { useContext, useEffect } from 'react'
 import { BiCart, BiMoon, BiSun } from 'react-icons/bi'
 

@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react'
-import { AppContext } from '../../Context'
+import { AppContext } from '@/Context'
 import { HiMinusCircle, HiPlusCircle } from 'react-icons/hi'
 
 function ProductsCart ({ productsCart }) {
