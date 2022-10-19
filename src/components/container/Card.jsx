@@ -1,6 +1,6 @@
-import Sizes from './Sizes'
 import { useContext, useEffect } from 'react'
 import { AppContext } from '@/Context'
+import Sizes from '@/components/container/Sizes'
 
 function Card ({ product, showNotification }) {
   const { productsCart, setProductsCart, setCount } =
