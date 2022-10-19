@@ -10,8 +10,12 @@ export function AppContextProvider ({ children }) {
   const [openS, setOpen] = useState(false)
   const [dataProducts, setDataProducts] = useState([])
   const [dataInitial, setDataInitial] = useState([])
+  const [isLoading, setIsLoading] = useState(true)
 
-  const [productsCart, setProductsCart] = useLocalStorage('products', [])
+  const [productsCart, setProductsCart] = useLocalStorage(
+    'products',
+    []
+  )
 
   useEffect(() => {
     getDataProducts()
@@ -20,6 +24,7 @@ export function AppContextProvider ({ children }) {
         setDataInitial(data)
       })
       .catch((err) => console.error(err))
+      .finally(() => setIsLoading(false))
   }, [])
 
   const filterProducts = (e) => {
@@ -46,7 +51,8 @@ export function AppContextProvider ({ children }) {
         dataInitial,
         filterProducts,
         productsCart,
-        setProductsCart
+        setProductsCart,
+        isLoading
       }}
     >
       {children}
