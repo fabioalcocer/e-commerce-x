@@ -13,14 +13,22 @@ function Card ({ product, showNotification }) {
   const createProductCart = (product) => {
     showNotification()
     setProductsCart([...productsCart, product])
-    const productFound = productsCart.find(productCart => productCart._id === product._id)
-    if(Boolean(productFound)){
-      const products = productsCart.map(productCart => {
-        return productCart._id === product._id ? {...productFound, quantity: productFound.quantity + 1 } : productCart
-      })
-      setProductsCart(products)
-     }
-    else setProductsCart([...productsCart, product])
+
+    const productFound = productsCart.find(
+      (productCart) => productCart._id === product._id
+    )
+
+    if (productFound) {
+      handleQuantity(productFound, product)
+    }
+  }
+
+  const handleQuantity = (productFound, product) => {
+    return setProductsCart(productsCart.map((productCart) =>
+      productCart._id === product._id
+        ? { ...productFound, quantity: productFound.quantity + 1 }
+        : productCart
+    ))
   }
 
   return (
