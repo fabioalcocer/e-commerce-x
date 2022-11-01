@@ -8,7 +8,9 @@ function ProductsCart ({ productsCart }) {
 
   const handleRemoveBtn = (id) => {
     setCount(productsCart.length - 1)
-    setProductsCart(productsCart.filter((product) => product.id !== id))
+    setProductsCart(
+      productsCart.filter((product) => product._id !== id)
+    )
   }
 
   const reduceQuantity = (product) => {
@@ -33,7 +35,7 @@ function ProductsCart ({ productsCart }) {
         >
           {productsCart.map((product) => (
             <li key={product._id} className='flex py-6'>
-              <div className='h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600'>
+              <div className='w-24 flex-shrink-0 overflow-hidden rounded-md border border-slate-300 dark:border-slate-600 sm:w-28'>
                 <img
                   src={product.imageSrc}
                   className='h-full w-full object-cover object-center'
@@ -42,11 +44,10 @@ function ProductsCart ({ productsCart }) {
 
               <div className='ml-4 flex flex-1 flex-col'>
                 <div>
-                  <div className='flex justify-between text-lg font-semibold text-gray-900 dark:text-slate-200'>
-                    <h3>{product.name}</h3>
-                    <p className='ml-4 font-semibold text-emerald-600 dark:text-emerald-500'>
-                      {`${product.price * product.quantity}Bs`}
-                    </p>
+                  <div className='text-md flex items-center font-semibold text-gray-900 dark:text-slate-200 sm:text-lg'>
+                    <h3 className=''>
+                      {product.name} ({product.currentSize})
+                    </h3>
                   </div>
                   <p className='mt-2 flex items-center gap-2 text-base text-gray-500 dark:text-gray-200 md:text-base'>
                     Cantidad:
@@ -61,17 +62,14 @@ function ProductsCart ({ productsCart }) {
                     />
                   </p>
                 </div>
-                <div className='mt-2 flex flex-1 flex-wrap items-end justify-between'>
-                  <p className='mt-0 text-base capitalize text-gray-500 dark:text-gray-300'>
-                    Talla:{' '}
-                    <span className='font-bold text-black dark:text-white'>
-                      {product.currentSize}
-                    </span>
+                <div className='mt-3 flex flex-1 flex-wrap items-center justify-between'>
+                  <p className='text-xl font-semibold text-emerald-600 dark:text-emerald-500 md:text-2xl'>
+                    {`${product.price * product.quantity}Bs`}
                   </p>
                   <button
-                    onClick={() => handleRemoveBtn(product.id)}
+                    onClick={() => handleRemoveBtn(product._id)}
                     type='button'
-                    className='mt-1 rounded-md bg-indigo-500 p-1 text-sm font-semibold text-white transition-colors duration-300 hover:bg-indigo-400 sm:text-base'
+                    className='rounded-md bg-indigo-500 p-1 text-sm font-semibold text-white transition-colors duration-300 hover:bg-indigo-400 sm:text-base'
                   >
                     Eliminar
                   </button>

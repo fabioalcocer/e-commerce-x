@@ -39,10 +39,9 @@ function Card ({ product, showNotification }) {
         alt='T-Shirt'
       />
       <div className='mt-1 flex w-full items-center justify-between py-2'>
-        <h4 className='text-lg font-medium text-gray-700 dark:text-slate-200'>
+        <h4 className='text-lg font-semibold text-gray-700 dark:text-slate-200'>
           {product.name}
         </h4>
-        <p className='font-bold text-emerald-600 dark:text-emerald-500'>{`${product.price}Bs`}</p>
       </div>
 
       <Sizes product={product} />
