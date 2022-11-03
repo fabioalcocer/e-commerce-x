@@ -1,34 +1,32 @@
 import logo from '@/assets/logo.webp'
-import { useRef } from 'react'
 import Navbar from './NavBar'
-import '../../index.css'
+import { useScrollPosition } from '@/hooks/useScrollPosition'
 
 function Header () {
-  const headerRef = useRef(null)
-  const navBarRef = useRef(null)
+  const scrollPosition = useScrollPosition()
+  // console.log(scrollPosition)
 
-  let prevY = window.scrollY
-
-  window.addEventListener('scroll', () => {
-    if (prevY > window.scrollY) {
-      headerRef.current.classList.remove('off')
-      navBarRef.current.classList.remove('left')
-    } else {
-      headerRef.current.classList.add('off')
-      navBarRef.current.classList.add('left')
-    }
-    prevY = window.scrollY
-  })
-
+  function classNames (...classes) {
+    return classes.filter(Boolean).join(' ')
+  }
   return (
-    <header className='transition-colors: container sticky top-0 z-10 mx-auto justify-between bg-slate-50 py-4 pb-5 duration-500 dark:bg-gray-900 md:flex'>
+    <header
+      // className='transition-colors: container sticky top-0 z-10 mx-auto justify-between bg-slate-50 py-4 pb-5 duration-500 dark:bg-gray-900 md:flex'
+      className={classNames(
+        scrollPosition > 0 ? 'md:h-20' : 'md:h-44',
+        'transition-colors: container sticky top-0 z-10 mx-auto items-center justify-between bg-slate-50 py-4 pb-5 duration-500 dark:bg-gray-900 md:flex'
+      )}
+    >
       <img
-        className='mx-auto mb-2 flex h-36 w-36 md:mx-0'
-        ref={headerRef}
+        // className='mx-auto mb-2 flex h-36 w-36 md:mx-0'
+        className={classNames(
+          scrollPosition > 0 ? 'md:opacity-0 md:flex hidden' : 'md:opacity-100',
+          'mx-auto mb-2 flex h-36 w-36 transition-opacity duration-300 md:mx-0'
+        )}
         src={logo}
         alt='logo'
       />
-      <Navbar navBarRef={navBarRef} />
+      <Navbar />
     </header>
   )
 }

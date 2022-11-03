@@ -5,7 +5,7 @@ import { BiCart, BiMoon, BiSun } from 'react-icons/bi'
 import useLocalStorage from '../../hooks/useLocalStorage'
 import SearchBar from './SearchBar.jsx'
 
-function Navbar ({ navBarRef }) {
+function Navbar () {
   const { count, setOpen } = useContext(AppContext)
   const [theme, setTheme] = useLocalStorage('theme', 'light')
 
@@ -19,7 +19,7 @@ function Navbar ({ navBarRef }) {
 
   return (
     <>
-      <div ref={navBarRef} className='relative mx-auto flex items-center gap-2 text-gray-600 dark:text-slate-300 md:mr-0 lg:gap-3'>
+      <div className='relative mx-auto flex items-center gap-2 text-gray-600 dark:text-slate-300 md:mr-0 lg:gap-3'>
         <SearchBar />
         <div
           className='text-3xl'
