@@ -10,6 +10,9 @@ module.exports = {
     extend: {
       animation: {
         'bounce-slow': 'bounce 2s linear infinite'
+      },
+      maxWidth: {
+        'screen-2xl': '1300px'
       }
     }
   },

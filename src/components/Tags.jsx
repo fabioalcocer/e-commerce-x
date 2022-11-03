@@ -5,7 +5,7 @@ function Tags () {
   const [active, setActive] = useState('Todo')
   const { filterProducts } = useContext(AppContext)
 
-  const tags = ['Todo', 'Sudaderas', 'Poleras', 'Deportivos', 'Shorts', 'Tennis']
+  const tags = ['Todo', 'Sudaderas', 'Poleras', 'Deportivos', 'Calzas', 'Shorts', 'Soleras']
 
   const handleTags = (e, tag) => {
     filterProducts(e)

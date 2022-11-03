@@ -52,3 +52,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.off {
+  @apply hidden;
+}
+
+.left {
+  @apply ml-auto;
+}
