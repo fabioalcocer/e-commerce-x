@@ -14,7 +14,7 @@ function Header () {
       // className='transition-colors: container sticky top-0 z-10 mx-auto justify-between bg-slate-50 py-4 pb-5 duration-500 dark:bg-gray-900 md:flex'
       className={classNames(
         scrollPosition > 0 ? 'md:h-20' : 'md:h-44',
-        'transition-colors: container sticky top-0 z-10 mx-auto items-center justify-between bg-slate-50 py-4 pb-5 duration-500 dark:bg-gray-900 md:flex'
+        'transition-colors: container sticky top-0 z-10 mx-auto items-center justify-between bg-slate-50 md:py-4 py-6 duration-500 dark:bg-gray-900 md:flex'
       )}
     >
       <img
