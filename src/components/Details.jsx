@@ -1,6 +1,6 @@
 function Details () {
   return (
-    <section className='details flex flex-col items-start md:items-center mx-auto text-left  md:text-center mt-5 md:mt-1'>
+    <section className='details flex flex-col items-start md:items-center mx-auto text-left  md:text-center mt-5 md:mt-2'>
       <h1 className='text-[1.7rem] text-slate-900 dark:text-gray-200 md:text-4xl'>
         El Chiringuito Deportivo
       </h1>

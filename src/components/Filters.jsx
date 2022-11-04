@@ -74,7 +74,7 @@ function Filters () {
         </Transition>
       </Menu>
       <span className='font-medium text-gray-500 dark:text-slate-200'>
-        {dataProducts.length} Articulos
+        {dataProducts.length} Artículos
       </span>
     </div>
   )

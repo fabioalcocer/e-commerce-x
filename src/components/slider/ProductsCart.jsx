@@ -69,7 +69,7 @@ function ProductsCart ({ productsCart }) {
                   <button
                     onClick={() => handleRemoveBtn(product._id)}
                     type='button'
-                    className='rounded-md bg-indigo-500 p-1 text-sm font-semibold text-white transition-colors duration-300 hover:bg-indigo-400 sm:text-base'
+                    className='rounded-md bg-indigo-500 p-1 pl-[6px] text-sm font-semibold text-white transition-colors duration-300 hover:bg-indigo-400 sm:text-base'
                   >
                     Eliminar
                   </button>

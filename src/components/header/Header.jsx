@@ -11,7 +11,7 @@ function Header () {
   return (
     <header
       className={classNames(
-        scrollPosition > 0 ? 'md:h-20 -translate-y-[155px]' : 'md:h-44',
+        scrollPosition > 0 ? 'md:h-20 -translate-y-[157px]' : 'md:h-44',
         'transition-all: container sticky top-0 z-10 mx-auto md:-translate-y-0 items-center justify-between bg-slate-50 py-6 duration-500 dark:bg-gray-900 md:flex md:py-4'
       )}
     >
