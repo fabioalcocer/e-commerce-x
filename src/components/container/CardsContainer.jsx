@@ -73,6 +73,7 @@ function CardsContainer () {
           totalPages={totalPages}
           onPageChange={handlePageChange}
           showIcons
+          className='flex overflow-auto'
         />
       </div>
 
