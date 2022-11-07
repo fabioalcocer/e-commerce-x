@@ -16,7 +16,7 @@ function CardsContainer () {
 
   const scrollTop = () => {
     window.scrollTo({
-      top: 10,
+      top: 160,
       behavior: 'smooth'
     })
   }
