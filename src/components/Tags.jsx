@@ -1,13 +1,14 @@
 import { useContext, useState } from 'react'
 import { AppContext } from '@/Context'
 
-function Tags () {
+function Tags ({ setCurrentPage }) {
   const [active, setActive] = useState('Todo')
   const { filterProducts } = useContext(AppContext)
 
-  const tags = ['Todo', 'Sudaderas', 'Poleras', 'Deportivos', 'Calzas', 'Shorts', 'Soleras']
+  const tags = ['Todo', 'Sudaderas', 'Poleras', 'Deportivos', 'Rompevientos', 'Calzas', 'Shorts', 'Soleras']
 
   const handleTags = (e, tag) => {
+    setCurrentPage(1)
     filterProducts(e)
     setActive(tag)
   }

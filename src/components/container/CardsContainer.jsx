@@ -16,7 +16,7 @@ function CardsContainer () {
 
   const scrollTop = () => {
     window.scrollTo({
-      top: 160,
+      top: 10,
       behavior: 'smooth'
     })
   }
@@ -40,7 +40,7 @@ function CardsContainer () {
     <>
       <Notification refNoti={refNotification} />
       <section className='container mx-auto max-w-7xl'>
-        <Tags />
+        <Tags setCurrentPage={setCurrentPage} />
         <Filters />
       </section>
       <section className='container mx-auto flex min-h-[50vh] items-center justify-center pb-5'>
@@ -73,7 +73,7 @@ function CardsContainer () {
           totalPages={totalPages}
           onPageChange={handlePageChange}
           showIcons
-          className='flex overflow-auto'
+          className='flex overflow-auto pg-btn'
         />
       </div>
 
