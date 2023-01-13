@@ -12,6 +12,7 @@ function Tags ({ setCurrentPage }) {
     filterProducts(e)
     setActive(tag)
   }
+
   return (
     <div className='mt-4 flex'>
       <ul className='text-md flex overflow-x-auto p-1 pl-[2px] text-center font-medium text-gray-100 mx-auto'>

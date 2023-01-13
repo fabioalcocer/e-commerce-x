@@ -20,6 +20,7 @@ function CardsContainer () {
   }
 
   const handlePageChange = (pageNumber) => {
+    console.log(pageNumber)
     setCurrentPage(pageNumber)
     scrollTop()
   }
@@ -41,6 +42,8 @@ function CardsContainer () {
         <Pagination
           currentPage={currentPage}
           totalPages={totalPages}
+          nextLabel=''
+          previousLabel=''
           onPageChange={handlePageChange}
           showIcons
           className='pg-btn flex overflow-auto'

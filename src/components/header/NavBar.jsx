@@ -7,7 +7,7 @@ import SearchBar from './SearchBar.jsx'
 
 function Navbar () {
   const { count, setOpen } = useContext(AppContext)
-  const [theme, setTheme] = useLocalStorage('theme', 'light')
+  const [theme, setTheme] = useLocalStorage('theme', 'dark')
 
   useEffect(() => {
     document.querySelector('body').className = theme

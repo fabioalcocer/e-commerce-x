@@ -53,6 +53,6 @@ code {
     monospace;
 }
 
-.pg-btn button {
+/* .pg-btn button {
   @apply dark:bg-slate-600 dark:text-slate-100 dark:hover:bg-indigo-500 transition-colors duration-300 items-center dark:focus:bg-indigo-500
-}
+} */
