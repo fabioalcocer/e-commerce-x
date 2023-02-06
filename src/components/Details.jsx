@@ -8,9 +8,7 @@ function Details () {
         Bienvenido a nuestra tienda de ropa deportiva, donde
         encontrarás una amplia variedad de prendas deportivas.
         Ofrecemos una gran variedad de tallas y estilos para hombres,
-        mujeres y niños. Ya sea que estés buscando ropa para correr,
-        entrenar en el gimnasio o para cualquier otro deporte, tenemos
-        lo que necesitas. Además, ofrecemos precios competitivos y un
+        mujeres y niños. Además, ofrecemos precios competitivos y un
         excelente servicio al cliente para garantizar que tu
         experiencia de compra sea lo mejor posible. ¡Visítanos hoy
         mismo y encuentra tu equipamiento deportivo perfecto!
