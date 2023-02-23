@@ -5,6 +5,7 @@ import Notification from '@/components/container/Notification'
 
 function ProductsList ({ isLoading, dataProducts, currentPage }) {
   const refNotification = useRef(null)
+  const dataProductsReversed = [...dataProducts].reverse()
 
   const showNotification = () => {
     refNotification.current.style.visibility = 'visible'
@@ -28,7 +29,7 @@ function ProductsList ({ isLoading, dataProducts, currentPage }) {
               : (
                 <div className='mt-10 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'>
                   <>
-                    {dataProducts
+                    {dataProductsReversed
                       .slice((currentPage - 1) * 12, currentPage * 12)
                       .map((product) => (
                         <Product
