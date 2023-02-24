@@ -12,9 +12,10 @@ function SearchBar () {
       : setDataProducts(productsSearch)
   }, [search])
 
-  const productsSearch = dataInitial.filter((product) =>
-    product.name.toLowerCase().includes(search)
-  )
+  const productsSearch = dataInitial.filter((product) => {
+    const name = product.name.toLowerCase()
+    return name.includes(search.toLowerCase())
+  })
 
   return (
     <>
