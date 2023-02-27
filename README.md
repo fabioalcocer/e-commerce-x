@@ -18,7 +18,7 @@
 
 ### Links
 
-- API: [API](https://api-ecommerce-x.vercel.app/api/products)
+- API: [API](https://chiringuito-api.vercel.app/)
 - Repository URL: [Repository](https://github.com/fabioalcocer/e-commerce-x)
 - Live Site URL: [Live](https://e-commerce-x.vercel.app)
 
